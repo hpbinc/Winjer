@@ -48,10 +48,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
                 @Override public void onClick(View v) {
                     int position = getAdapterPosition();
                     Log.e("hance",":::" + titles[position]);
-                    Snackbar.make(v, "Click detected on item " + position,
-                            Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-
+                    Snackbar.make(v, "Click detected on item " + position, Snackbar.LENGTH_LONG).setAction("Action", null).show();
                    /* Intent intent = new Intent (v.getContext(), insert.class);
                     intent.putExtra("titles", titles[position]);
                     intent.putExtra("details", details[position]);

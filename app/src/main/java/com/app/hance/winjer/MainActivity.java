@@ -1,5 +1,6 @@
 package com.app.hance.winjer;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
@@ -24,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private AlbumsAdapter adapter;
     private List<Album> albumList;
+
+
+    public static class Utility {
+        public static int calculateNoOfColumns(Context context) {
+            DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+            float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
+            int noOfColumns = (int) (dpWidth / 140);
+            return noOfColumns;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
         albumList = new ArrayList<>();
         adapter = new AlbumsAdapter(this, albumList);
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
+        int mNoOfColumns = Utility.calculateNoOfColumns(getApplicationContext());
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, mNoOfColumns);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -113,7 +127,9 @@ public class MainActivity extends AppCompatActivity {
         albumList.add(a);
 
         a = new Album("Sofa Cleaning",covers[4]);
-        albumList.add(a);
+        albumList.add(a);    /**
+     * RecyclerView item decoration - give equal margin around grid item
+     */
 
         a = new Album("Carpet Cleaning",covers[5]);
         albumList.add(a);
