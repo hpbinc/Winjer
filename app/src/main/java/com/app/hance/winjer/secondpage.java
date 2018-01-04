@@ -191,7 +191,7 @@ public class secondpage extends AppCompatActivity implements GoogleApiClient.Con
                             "permission granted, :)",
                             Toast.LENGTH_LONG).show();
                     // now app have permission so calling getmylocation again
-                    //hello
+                    //helo
                              getMyLocation();
 
                 } else {
