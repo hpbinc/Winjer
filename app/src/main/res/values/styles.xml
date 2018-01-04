@@ -8,5 +8,10 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">#292929</item>
+        <item name="android:textSize">20dp</item>
+        <item name="colorPrimaryDark">#b71a1a</item>
 
+    </style>
 </resources>
