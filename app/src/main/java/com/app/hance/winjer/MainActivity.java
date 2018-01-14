@@ -1,6 +1,7 @@
 package com.app.hance.winjer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -61,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         prepareAlbums();
+
+        Intent intent=new Intent(this,secondpage.class);
+        startActivity(intent);
 
         try {
             Glide.with(this).load(R.drawable.winjer_png).into((ImageView) findViewById(R.id.backdrop));
