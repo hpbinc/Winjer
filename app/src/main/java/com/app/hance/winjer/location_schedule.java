@@ -1,34 +1,18 @@
 package com.app.hance.winjer;
 
 import android.Manifest;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.location.Address;
-import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.NumberPicker;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -41,14 +25,10 @@ import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-import in.goodiebag.carouselpicker.CarouselPicker;
-
-public class secondpage extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
+public class location_schedule extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
 
 
@@ -62,7 +42,7 @@ public class secondpage extends AppCompatActivity implements GoogleApiClient.Con
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_secondpage);
+        setContentView(R.layout.activity_location_schedule);
 
 
         btnGetLastLocation = (Button) findViewById(R.id.button);
@@ -162,11 +142,11 @@ public class secondpage extends AppCompatActivity implements GoogleApiClient.Con
                 if(mGoogleApiClient.isConnected()){
                     getMyLocation();
                 }else{
-                    Toast.makeText(secondpage.this,
+                    Toast.makeText(location_schedule.this,
                             "!mGoogleApiClient.isConnected()", Toast.LENGTH_LONG).show();
                 }
             }else{
-                Toast.makeText(secondpage.this,
+                Toast.makeText(location_schedule.this,
                         "mGoogleApiClient == null", Toast.LENGTH_LONG).show();
             }
         }
@@ -183,14 +163,14 @@ public class secondpage extends AppCompatActivity implements GoogleApiClient.Con
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(secondpage.this,
+                    Toast.makeText(location_schedule.this,
                             "permission granted, :)",
                             Toast.LENGTH_LONG).show();
                     // now app have permission so calling getmylocation again
                     getMyLocation();
 
                 } else {
-                    Toast.makeText(secondpage.this,
+                    Toast.makeText(location_schedule.this,
                             "permission denied, ...:(",
                             Toast.LENGTH_LONG).show();
                 }
@@ -219,7 +199,7 @@ public class secondpage extends AppCompatActivity implements GoogleApiClient.Con
 
 
             //------------------------------------------------------------------------------
-            ActivityCompat.requestPermissions(secondpage.this,
+            ActivityCompat.requestPermissions(location_schedule.this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
 
@@ -240,18 +220,18 @@ public class secondpage extends AppCompatActivity implements GoogleApiClient.Con
                 if (addresses.size() > 0)
                     //Get all details from address
                     //cityName = addresses.get(0).getLocality();
-                    Toast.makeText(secondpage.this, "" + addresses.get(0).getLocality()
+                    Toast.makeText(location_schedule.this, "" + addresses.get(0).getLocality()
                             + addresses.get(0).getSubLocality()
                             + addresses.get(0).getPostalCode(), Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Toast.makeText(secondpage.this, String.valueOf(mLastLocation.getLatitude()) + "\n"
+            Toast.makeText(location_schedule.this, String.valueOf(mLastLocation.getLatitude()) + "\n"
                             + String.valueOf(mLastLocation.getLongitude()),
                     Toast.LENGTH_LONG).show();
         }
         else{
-            Toast.makeText(secondpage.this,
+            Toast.makeText(location_schedule.this,
                     "mLastLocation == null",
                     Toast.LENGTH_LONG).show();
         }

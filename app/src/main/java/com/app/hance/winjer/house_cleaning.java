@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 import worker8.com.github.radiogroupplus.RadioGroupPlus;
@@ -37,7 +36,7 @@ public class house_cleaning extends AppCompatActivity {
     public void onOrderClicked(View view) {
         if (R.id.rb_latte == mRadioGroupPlus.getCheckedRadioButtonId()) {
             Toast.makeText(house_cleaning.this, "Latte", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(house_cleaning.this,secondpage.class);
+            Intent i = new Intent(house_cleaning.this,location_schedule.class);
             startActivity(i);
         } else if (R.id.rb_mocha == mRadioGroupPlus.getCheckedRadioButtonId()) {
             Toast.makeText(house_cleaning.this, "Mocha", Toast.LENGTH_SHORT).show();

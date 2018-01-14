@@ -37,7 +37,7 @@
             android:label="@string/app_name" />
         <activity android:name=".house_cleaning" />
         <activity android:name=".order_details" />
-        <activity android:name=".secondpage"></activity>
+        <activity android:name=".location_schedule"></activity>
     </application>
 
 </manifest>

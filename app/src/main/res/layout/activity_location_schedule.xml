@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.app.hance.winjer.secondpage">
+    tools:context="com.app.hance.winjer.location_schedule">
 
     <fragment
         android:id="@+id/place_autocomplete_fragment"
