@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
         prepareAlbums();
 
-        Intent intent=new Intent(this,secondpage.class);
-        startActivity(intent);
+        //Intent intent=new Intent(this,location_schedule.class);
+        //startActivity(intent);
 
         try {
             Glide.with(this).load(R.drawable.winjer_png).into((ImageView) findViewById(R.id.backdrop));
