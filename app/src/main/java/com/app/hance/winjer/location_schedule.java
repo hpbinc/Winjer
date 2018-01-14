@@ -76,14 +76,14 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
         np.setWrapSelectorWheel(true);
         //Set a value change listener for NumberPicker
 
-        com.shawnlin.numberpicker.NumberPicker np2 = (com.shawnlin.numberpicker.NumberPicker) findViewById(R.id.picker2);
+        //com.shawnlin.numberpicker.NumberPicker np2 = (com.shawnlin.numberpicker.NumberPicker) findViewById(R.id.picker2);
         //Initializing a new string array with elements
 
 
-        np2.setMinValue(0); //from array first value
-        np2.setMaxValue(values.length - 1); //to array last value
-        np2.setDisplayedValues(values);
-        np2.setWrapSelectorWheel(false);
+        //np2.setMinValue(0); //from array first value
+        //np2.setMaxValue(values.length - 1); //to array last value
+        //np2.setDisplayedValues(values);
+        //np2.setWrapSelectorWheel(false);
 
 
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
