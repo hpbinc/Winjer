@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
     /**
      * Initializing collapsing toolbar
      * Will show and hide the toolbar title on scroll
@@ -114,27 +113,27 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.carpet,
                 R.drawable.housekeeping};
 
-        Album a = new Album("House Cleaning", covers[0]);
+        Album a = new Album("HOUSE CLEANING", covers[0]);
         albumList.add(a);
 
-        a = new Album("Apartment Cleaning", covers[1]);
+        a = new Album("APARTMENT CLEANING", covers[1]);
         albumList.add(a);
 
-        a = new Album("Office Cleaning", covers[2]);
+        a = new Album("OFFICE CLEANING", covers[2]);
         albumList.add(a);
 
-        a = new Album("Commercial Cleaning",covers[3]);
+        a = new Album("COMMERCIAL CLEANING",covers[3]);
         albumList.add(a);
 
-        a = new Album("Sofa Cleaning",covers[4]);
+        a = new Album("SOFA CLEANING",covers[4]);
         albumList.add(a);    /**
      * RecyclerView item decoration - give equal margin around grid item
      */
 
-        a = new Album("Carpet Cleaning",covers[5]);
+        a = new Album("CARPET CLEANING",covers[5]);
         albumList.add(a);
 
-        a = new Album("House Keeping Service", covers[6]);
+        a = new Album("HOUSE KEEPING SERVICE", covers[6]);
         albumList.add(a);
 
         adapter.notifyDataSetChanged();

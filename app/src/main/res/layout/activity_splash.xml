@@ -66,9 +66,9 @@
 
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:srcCompat="@mipmap/ic_winjer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/winjer_small11"
         android:id="@+id/fbLogoImageView"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
@@ -77,9 +77,9 @@
 
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:srcCompat="@mipmap/ic_winjer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/winjer_small11"
         android:id="@+id/fbLogoStaticImageView"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
@@ -92,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="WINJER"
+        android:text="WINJER GROUP"
         android:textColor="#000"
         android:gravity="center"
         android:textStyle="bold"
