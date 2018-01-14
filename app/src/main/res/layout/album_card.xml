@@ -11,6 +11,8 @@
         android:layout_margin="@dimen/card_margin"
         card_view:cardCornerRadius="12dp"
         card_view:cardElevation="3dp"
+        android:focusable="true"
+        android:foreground="@drawable/ripple_custom"
         card_view:contentPadding="0dp">
 
         <RelativeLayout

@@ -109,13 +109,13 @@ public class MainActivity extends AppCompatActivity {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.house,
+                R.drawable.house2,
                 R.drawable.apartment,
                 R.drawable.office,
                 R.drawable.commercial,
                 R.drawable.sofa,
-                R.drawable.carpet,
-                R.drawable.housekeeping};
+                R.drawable.carpet2,
+                R.drawable.party};
 
         Album a = new Album("HOUSE CLEANING", covers[0]);
         albumList.add(a);
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         a = new Album("CARPET CLEANING",covers[5]);
         albumList.add(a);
 
-        a = new Album("HOUSE KEEPING SERVICE", covers[6]);
+        a = new Album("PARTY CLEANING", covers[6]);
         albumList.add(a);
 
         adapter.notifyDataSetChanged();

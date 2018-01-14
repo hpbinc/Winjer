@@ -68,7 +68,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/winjer_small11"
+        app:srcCompat="@mipmap/winjer_small"
         android:id="@+id/fbLogoImageView"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
@@ -79,7 +79,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/winjer_small11"
+        app:srcCompat="@mipmap/winjer_small"
         android:id="@+id/fbLogoStaticImageView"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"

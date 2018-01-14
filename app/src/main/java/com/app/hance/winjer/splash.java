@@ -43,13 +43,14 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
 
             textView = (TextView) findViewById(R.id.textView);
             mimos= (TextView) findViewById(R.id.mimos);
-            Typeface zeronero= Typeface.createFromAsset(getAssets(),"fonts/zeronero.ttf");
+   /*         Typeface zeronero= Typeface.createFromAsset(getAssets(),"fonts/zeronero.ttf");
             Typeface anson=Typeface.createFromAsset(getAssets(),"fonts/Anson-Regular.otf");
             Typeface gillsans=Typeface.createFromAsset(getAssets(),"fonts/gillsans.ttf");
             Typeface vampire=Typeface.createFromAsset(getAssets(),"fonts/vampire.ttf");
 
             textView.setTypeface(anson);
             mimos.setTypeface(anson);
+            */
         //mNewAccountButton = (Button) findViewById(R.id.newAccountButton);
         mFbLogoStaticImageView = (ImageView) findViewById(R.id.fbLogoStaticImageView);
 
