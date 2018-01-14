@@ -59,9 +59,7 @@
             android:layout_height="100dp"
             android:id="@+id/picker"
             android:theme="@style/AppTheme.Picker"
-
             />
-
 
     </LinearLayout>
 
