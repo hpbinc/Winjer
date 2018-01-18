@@ -28,16 +28,17 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />
-        <activity android:name=".house_cleaning" />
+        <activity android:name=".house_cleaning"
+            android:theme="@style/AppThemeBar"/>
         <activity android:name=".order_details" />
-        <activity android:name=".location_schedule"></activity>
+        <activity android:name=".location_schedule"
+            android:theme="@style/AppThemeBar"></activity>
     </application>
 
 </manifest>

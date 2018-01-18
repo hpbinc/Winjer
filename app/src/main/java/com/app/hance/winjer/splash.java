@@ -34,6 +34,7 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+
         if(savedInstanceState != null) {
             START_ANIMATION = savedInstanceState.getBoolean("START_ANIMATION");
         }
@@ -47,6 +48,7 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
             Typeface anson=Typeface.createFromAsset(getAssets(),"fonts/Anson-Regular.otf");
             Typeface gillsans=Typeface.createFromAsset(getAssets(),"fonts/gillsans.ttf");
             Typeface vampire=Typeface.createFromAsset(getAssets(),"fonts/vampire.ttf");
+
 
             textView.setTypeface(anson);
             mimos.setTypeface(anson);

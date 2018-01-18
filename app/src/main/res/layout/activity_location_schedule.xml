@@ -1,80 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:float="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.app.hance.winjer.location_schedule">
+    tools:context="com.app.hance.winjer.location_schedule"
+    android:scrollbars="none">
 
-    <fragment
-        android:id="@+id/place_autocomplete_fragment"
+    <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
         android:layout_height="wrap_content"
-        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
+        android:scrollbars="none"
+        android:layout_margin="16dp"
+        android:id="@+id/horiView">
 
-    <View
-        android:layout_below="@id/place_autocomplete_fragment"
-        android:id="@+id/view1"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#E0E0E0"
-        android:layout_marginBottom="20dp"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JAN 15\nMON"
+                android:background="@drawable/button_transparent"
+                android:id="@+id/date1"
+                android:focusable="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JAN 16\nTUE"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/button_transparent"
+                android:id="@+id/date2"
+                android:focusable="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JAN 17\nWED"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/button_transparent"
+                android:id="@+id/date3"
+                android:focusable="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JAN 18\nTHU"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/button_transparent"
+                android:id="@+id/date4"
+                android:focusable="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JAN 19\nFRI"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/button_transparent"
+                android:id="@+id/date5"
+                android:focusable="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JAN 20\nSAT"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/button_transparent"
+                android:id="@+id/date6"
+                android:focusable="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JAN 21\nSUN"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/button_transparent"
+                android:id="@+id/date7"
+                android:focusable="true"
+                />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/layout"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/view1"
-        android:layout_height="wrap_content">
+        android:layout_below="@id/horiView"
+        android:layout_margin="16dp">
 
-        <TextView
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            float:fletPadding="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="House"
+                android:id="@+id/house"
+                android:paddingLeft="10dp"/>
+
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="SCHEDULE BOOKING"
-            android:textSize="25dp"
-            android:textColor="#000000"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/text"
+            android:layout_marginTop="16dp"
+            android:text="my location"
+            android:onClick="locat"
+            android:id="@+id/button"
+            android:textColor="#fff"
+            android:background="@drawable/button_transparent"
             />
 
-        <View
-            android:id="@+id/view2"
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#E0E0E0"
-            android:layout_marginBottom="20dp"/>
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp">
 
-        <NumberPicker
-            android:layout_marginLeft="20dp"
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Locality"
+                android:id="@+id/locality"
+                android:paddingLeft="10dp"/>
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@+id/picker"
-            android:theme="@style/AppTheme.Picker"
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp">
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pin"
+                android:id="@+id/pin"
+                android:paddingLeft="10dp"/>
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <fragment
+            android:id="@+id/place_autocomplete_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="8dp"
             />
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile No"
+                android:id="@+id/mobile"
+                android:paddingLeft="10dp"
+                android:inputType="phone"/>
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="Remarks"
+                android:id="@+id/remarks"
+                android:paddingLeft="10dp"/>
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
 
     </LinearLayout>
 
-    <Button
-        android:layout_below="@+id/layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="my location"
-        android:onClick="locat"
-        android:id="@+id/button"
-        android:textColor="#fff"
-        android:background="@drawable/buttonstyle"
-        />
+    </RelativeLayout>
 
-
-
-</RelativeLayout>
+</ScrollView>

@@ -2,6 +2,7 @@ package com.app.hance.winjer;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
@@ -60,34 +62,13 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
 
 
 
-        //locationMangr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-
-
-        NumberPicker np = (NumberPicker) findViewById(R.id.picker);
-        //Initializing a new string array with elements
-        final String[] values = {"20 DEC,MON", "21 DEC,TUE", "22 DEC,WED", "24 DEC,THU", "25 DEC,FRI"};
-
-
-        np.setDividerPadding(1);
-        np.setMinValue(0); //from array first value
-        np.setMaxValue(values.length - 1); //to array last value
-        np.setDisplayedValues(values);
-        np.setWrapSelectorWheel(true);
-        //Set a value change listener for NumberPicker
-
-        //com.shawnlin.numberpicker.NumberPicker np2 = (com.shawnlin.numberpicker.NumberPicker) findViewById(R.id.picker2);
-        //Initializing a new string array with elements
-
-
-        //np2.setMinValue(0); //from array first value
-        //np2.setMaxValue(values.length - 1); //to array last value
-        //np2.setDisplayedValues(values);
-        //np2.setWrapSelectorWheel(false);
-
-
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+        ((EditText)places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(15.0f);
+        ((EditText)places.getView().findViewById(R.id.place_autocomplete_search_input)).setHint("Landmark");
+        //((EditText)places.getView().findViewById(R.id.place_autocomplete_search_input)).setHintTextColor(Color.GRAY);
+
+
         places.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
