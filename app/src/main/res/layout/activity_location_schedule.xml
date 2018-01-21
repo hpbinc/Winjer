@@ -6,27 +6,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context="com.app.hance.winjer.location_schedule"
     android:scrollbars="none">
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_height="match_parent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Schedule Booking"
-            android:gravity="center"
-            android:textSize="25sp"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/schedule"/>
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
         android:scrollbars="none"
-        android:layout_margin="16dp"
+
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginBottom="10dp"
+
         android:id="@+id/horiview"
         android:layout_below="@id/schedule">
 
@@ -34,7 +44,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <Button
                 android:layout_width="wrap_content"
@@ -110,16 +120,28 @@
 
     </HorizontalScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/horiview">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+
+            android:layout_below="@+id/horiview"
+            android:gravity="left"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/textaddress"
+          />
+
 
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/mainhouse"
+            android:layout_below="@+id/textaddress"
             float:fletPadding="10dp">
 
             <EditText
@@ -132,22 +154,15 @@
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="16dp"
-            android:text=" Fetch Location "
-            android:onClick="locat"
-            android:id="@+id/button"
-            android:textColor="#808080"
-            />
+
 
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            float:fletPaddingBottom="10dp">
+            android:layout_below="@+id/mainhouse"
+            android:id="@+id/mainlocality"
+            float:fletPaddingBottom="5dp">
 
             <EditText
                 android:layout_width="match_parent"
@@ -162,7 +177,9 @@
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            float:fletPaddingBottom="10dp">
+            android:layout_below="@+id/mainlocality"
+            android:id="@+id/mainpin"
+            float:fletPaddingBottom="5dp">
 
             <EditText
                 android:layout_width="match_parent"
@@ -172,6 +189,26 @@
                 android:paddingLeft="10dp"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:layout_below="@+id/horiview"
+            android:layout_toRightOf="@+id/textaddress"
+
+            android:layout_marginLeft="120dp"
+            android:text=" get my Location "
+            android:onClick="locat"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_custom"
+
+            android:background="@drawable/buttonstyle"
+            android:id="@+id/button"
+            android:textSize="10dp"
+            android:textColor="#fff"
+            />
+
 
 
         <fragment
@@ -180,19 +217,25 @@
             android:layout_height="wrap_content"
             android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
             tools:layout_editor_absoluteY="0dp"
+            android:layout_below="@id/mainpin"
             tools:layout_editor_absoluteX="8dp"
             />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_below="@+id/place_autocomplete_fragment"
+            android:id="@+id/view"
             android:background="#808080"/>
 
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            float:fletPaddingBottom="10dp">
+            android:layout_below="@+id/view"
+            android:id="@+id/mainmobile"
+            float:fletPaddingBottom="5dp">
+
 
             <EditText
                 android:layout_width="match_parent"
@@ -206,18 +249,39 @@
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            float:fletPaddingBottom="10dp">
+            android:layout_below="@id/mainmobile"
+            android:id="@+id/mainremarks"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_transparent"
+            android:layout_marginBottom="10dp"
+            float:fletPaddingBottom="5dp">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:hint="Remarks"
+                android:gravity="bottom"
+                android:layout_gravity="left"
+                android:layout_marginBottom="10dp"
+                android:hint="Other info"
+
                 android:id="@+id/remarks"
                 android:paddingLeft="10dp"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
+<Button
+    android:layout_width="match_parent"
 
-    </LinearLayout>
+    android:layout_height="wrap_content"
+    android:text="Place order"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="#000"
+    android:textColor="#fff"
+    android:layout_below="@id/mainremarks"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="@drawable/ripple_custom"
+    />
 
     </RelativeLayout>
 

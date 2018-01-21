@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -263,13 +264,21 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
             try {
                 addresses = gcd.getFromLocation(mLastLocation.getLatitude(), mLastLocation
                         .getLongitude(), 1);
-                if (addresses.size() > 0)
-                    //Get all details from address
+                if (addresses.size() > 0) {  //Get all details from address
                     //cityName = addresses.get(0).getLocality();
-                    Toast.makeText(location_schedule.this, "" + addresses.get(0).getLocality()
-                            + addresses.get(0).getSubLocality()
-                            + addresses.get(0).getPostalCode(), Toast.LENGTH_SHORT).show();
-            } catch (IOException e) {
+                    //Toast.makeText(location_schedule.this, "" + addresses.get(0).getLocality()
+                      //      + addresses.get(0).getSubLocality() + addresses.get(0).getPostalCode(), Toast.LENGTH_SHORT).show();
+
+
+                    TextView locality=(TextView)findViewById(R.id.locality);
+                    TextView pin=(TextView)findViewById(R.id.pin);
+                    locality.setText(addresses.get(0).getSubLocality()+","+addresses.get(0).getLocality());
+                    pin.setText(addresses.get(0).getPostalCode());
+
+                }
+
+
+            }catch (IOException e) {
                 e.printStackTrace();
             }
             Toast.makeText(location_schedule.this, String.valueOf(mLastLocation.getLatitude()) + "\n"
@@ -278,7 +287,7 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
         }
         else{
             Toast.makeText(location_schedule.this,
-                    "mLastLocation == null",
+                    "location not available",
                     Toast.LENGTH_LONG).show();
         }
     }

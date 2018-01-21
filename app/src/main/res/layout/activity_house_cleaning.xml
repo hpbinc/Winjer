@@ -56,7 +56,7 @@
                     android:layout_toRightOf="@+id/iv_latte"
                     android:paddingLeft="20dp"
                     android:textSize="20sp"
-                    android:text="Basic cleaning - ₹ 2500" />
+                    android:text="Basic cleaning - ₹2500" />
 
                 <RadioButton
                     android:id="@+id/rb_latte"
@@ -91,7 +91,7 @@
                     android:layout_toRightOf="@+id/iv_mocha"
                     android:paddingLeft="20dp"
                     android:textSize="20sp"
-                    android:text="1 BHK House - ₹3000" />
+                    android:text="1 BHK House  - ₹3000" />
 
                 <RadioButton
                     android:id="@+id/rb_mocha"
@@ -126,7 +126,7 @@
                     android:layout_toRightOf="@+id/iv_americano"
                     android:paddingLeft="20dp"
                     android:textSize="20sp"
-                    android:text="2 BHK House - ₹3500" />
+                    android:text="2 BHK House  - ₹3500" />
 
                 <RadioButton
                     android:id="@+id/rb_americano"
@@ -161,7 +161,7 @@
                     android:layout_toRightOf="@+id/iv_espresso"
                     android:paddingLeft="20dp"
                     android:textSize="20sp"
-                    android:text="3 BHK House - ₹4500" />
+                    android:text="3 BHK House  - ₹4500" />
 
                 <RadioButton
                     android:id="@+id/rb_espresso"
@@ -197,7 +197,7 @@
                     android:layout_toRightOf="@+id/iv_orange"
                     android:paddingLeft="20dp"
                     android:textSize="20sp"
-                    android:text="4 BHK House - ₹6000" />
+                    android:text="4 BHK House  - ₹6000" />
 
                 <RadioButton
                     android:id="@+id/rb_orange"
