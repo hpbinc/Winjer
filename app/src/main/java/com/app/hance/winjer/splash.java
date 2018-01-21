@@ -103,7 +103,7 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
                 try {
 
                     sleep(2000);
-                    Intent intent = new Intent(getApplicationContext(),order_details.class);
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                     finish();
 
