@@ -13,13 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Schedule Booking"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:id="@+id/schedule"/>
+
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
         android:scrollbars="none"
         android:layout_margin="16dp"
-        android:id="@+id/horiView">
+        android:id="@+id/horiview"
+        android:layout_below="@id/schedule">
 
 
         <LinearLayout
@@ -31,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="JAN 15\nMON"
+                android:layout_marginLeft="7dp"
                 android:background="@drawable/button_transparent"
                 android:id="@+id/date1"
                 android:focusable="true"
@@ -40,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="JAN 16\nTUE"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="25dp"
                 android:background="@drawable/button_transparent"
                 android:id="@+id/date2"
                 android:focusable="true"
@@ -50,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="JAN 17\nWED"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="25dp"
                 android:background="@drawable/button_transparent"
                 android:id="@+id/date3"
                 android:focusable="true"
@@ -60,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="JAN 18\nTHU"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="16dp"
                 android:background="@drawable/button_transparent"
                 android:id="@+id/date4"
                 android:focusable="true"
@@ -70,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="JAN 19\nFRI"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="16dp"
                 android:background="@drawable/button_transparent"
                 android:id="@+id/date5"
                 android:focusable="true"
@@ -80,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="JAN 20\nSAT"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="16dp"
                 android:background="@drawable/button_transparent"
                 android:id="@+id/date6"
                 android:focusable="true"
@@ -90,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="JAN 21\nSUN"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="16dp"
                 android:background="@drawable/button_transparent"
                 android:id="@+id/date7"
                 android:focusable="true"
@@ -100,14 +110,12 @@
 
     </HorizontalScrollView>
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/horiView"
-        android:layout_margin="16dp">
+        android:layout_below="@id/horiview">
+
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
@@ -123,16 +131,18 @@
 
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="my location"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:text=" Fetch Location "
             android:onClick="locat"
             android:id="@+id/button"
-            android:textColor="#fff"
-            android:background="@drawable/button_transparent"
+            android:textColor="#808080"
             />
+
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
@@ -147,6 +157,8 @@
                 android:paddingLeft="10dp"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
+
+
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,6 +172,8 @@
                 android:paddingLeft="10dp"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
+
+
         <fragment
             android:id="@+id/place_autocomplete_fragment"
             android:layout_width="match_parent"
@@ -168,6 +182,12 @@
             tools:layout_editor_absoluteY="0dp"
             tools:layout_editor_absoluteX="8dp"
             />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#808080"/>
+
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
@@ -182,7 +202,6 @@
                 android:paddingLeft="10dp"
                 android:inputType="phone"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
-
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"

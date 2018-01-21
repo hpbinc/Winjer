@@ -31,21 +31,86 @@ import java.util.List;
 import java.util.Locale;
 
 public class location_schedule extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener {
+        GoogleApiClient.OnConnectionFailedListener,View.OnClickListener  {
 
 
     public static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+
+
+    private int[] btn_id = {R.id.date1, R.id.date2, R.id.date3, R.id.date4,R.id.date5, R.id.date6, R.id.date7};
+
+    Button date[];
+
+    private Button btn_unfocus;
+
 
     Button btnGetLastLocation;
 
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
 
+
+    private void setFocus(Button btn_unfocus, Button btn_focus){
+        btn_unfocus.setTextColor(Color.rgb(49, 50, 51));
+        btn_unfocus.setBackground(getDrawable(R.drawable.button_transparent));
+        btn_focus.setTextColor(Color.BLUE);
+        btn_focus.setBackground(getDrawable(R.drawable.button_transparent));
+        this.btn_unfocus = btn_focus;
+    }
+
+    @Override
+    public void onClick(View v) {
+        //setForcus(btn_unfocus, (Button) findViewById(v.getId()));
+        //Or use switch
+        switch (v.getId()){
+            case R.id.date1 :
+                setFocus(btn_unfocus, date[0]);
+                break;
+
+            case R.id.date2 :
+                setFocus(btn_unfocus, date[1]);
+                break;
+
+            case R.id.date3 :
+                setFocus(btn_unfocus, date[2]);
+                break;
+
+            case R.id.date4 :
+                setFocus(btn_unfocus, date[3]);
+                break;
+            case R.id.date5 :
+                setFocus(btn_unfocus, date[4]);
+                break;
+            case R.id.date6 :
+                setFocus(btn_unfocus, date[5]);
+                break;
+            case R.id.date7 :
+                setFocus(btn_unfocus, date[6]);
+                break;
+        }
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_schedule);
 
+        //hashim
+        date = new Button[7];
+        for(int i = 0; i < date.length; i++){
+            date[i] = (Button) findViewById(btn_id[i]);
+            //date[i].setBackgroundColor(Color.rgb(207, 207, 207));
+            date[i].setOnClickListener(this);
+        }
+
+
+        btn_unfocus = date[0];
+
+
+
+        setFocus(btn_unfocus,date[0]);
 
         btnGetLastLocation = (Button) findViewById(R.id.button);
         btnGetLastLocation.setOnClickListener(btnGetLastLocationOnClickListener);
@@ -64,7 +129,7 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
 
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
-        ((EditText)places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(15.0f);
+        ((EditText)places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(18.0f);
         ((EditText)places.getView().findViewById(R.id.place_autocomplete_search_input)).setHint("Landmark");
         //((EditText)places.getView().findViewById(R.id.place_autocomplete_search_input)).setHintTextColor(Color.GRAY);
 
