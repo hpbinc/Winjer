@@ -1,13 +1,13 @@
 package com.app.hance.winjer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity
         public static int calculateNoOfColumns(Context context) {
             DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
             float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
-            int noOfColumns = (int) (dpWidth / 140);
+            int noOfColumns = (int) (dpWidth / 100);
             return noOfColumns;
         }
     }
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, mNoOfColumns);
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        //recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
@@ -126,35 +126,61 @@ public class MainActivity extends AppCompatActivity
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.house2,
-                R.drawable.apartment,
-                R.drawable.office,
-                R.drawable.commercial,
-                R.drawable.sofa,
-                R.drawable.carpet2,
-                R.drawable.party};
+                R.drawable.basiccleaning,
+                R.drawable.deepcleaning,
+                R.drawable.party,
+                R.drawable.washing,
+                R.drawable.drycleaning,
+                R.drawable.acrepair,
+                R.drawable.electrical,
+                R.drawable.plumbing,
+                R.drawable.mobile,
+                R.drawable.tvrepair,
+                R.drawable.photography,
+                R.drawable.event,
+                R.drawable.tailoring,
+                R.drawable.cake};
 
-        Album a = new Album("HOUSE CLEANING", covers[0]);
+        Album a = new Album("BASIC CLEANING", covers[0]);
         albumList.add(a);
 
-        a = new Album("APARTMENT CLEANING", covers[1]);
+        a = new Album("DEEP CLEANING", covers[1]);
         albumList.add(a);
 
-        a = new Album("OFFICE CLEANING", covers[2]);
+        a = new Album("PARTY CLEANING", covers[2]);
         albumList.add(a);
 
-        a = new Album("COMMERCIAL CLEANING",covers[3]);
+        a = new Album("WASHING AND IRONING",covers[3]);
         albumList.add(a);
 
-        a = new Album("SOFA CLEANING",covers[4]);
-        albumList.add(a);    /**
-         * RecyclerView item decoration - give equal margin around grid item
-         */
-
-        a = new Album("CARPET CLEANING",covers[5]);
+        a = new Album("DRY CLEANING",covers[4]);
         albumList.add(a);
 
-        a = new Album("PARTY CLEANING", covers[6]);
+        a = new Album("AC SERVICE",covers[5]);
+        albumList.add(a);
+
+        a = new Album("ELECTRICAL", covers[6]);
+        albumList.add(a);
+
+        a = new Album("PLUMBING", covers[7]);
+        albumList.add(a);
+
+        a = new Album("MOBILE REPAIR",covers[8]);
+        albumList.add(a);
+
+        a = new Album("TV REPAIR",covers[9]);
+        albumList.add(a);
+
+        a = new Album("PHOTOGRAPHY",covers[10]);
+        albumList.add(a);
+
+        a = new Album("EVENT MANAGEMENT", covers[11]);
+        albumList.add(a);
+
+        a = new Album("TAILORING",covers[12]);
+        albumList.add(a);
+
+        a = new Album("CAKE", covers[13]);
         albumList.add(a);
 
         adapter.notifyDataSetChanged();
@@ -243,17 +269,29 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_home) {
 
-        } else if (id == R.id.nav_slideshow) {
+            startActivity(new Intent(MainActivity.this,MainActivity.class));
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_login) {
+            startActivity(new Intent(MainActivity.this,signup.class));
 
-        } else if (id == R.id.nav_share) {
+        }else if (id == R.id.nav_settings) {
 
-        } else if (id == R.id.nav_send) {
+            startActivity(new Intent(MainActivity.this,signup.class));
+
+        }  else if (id == R.id.nav_aboutus) {
+            startActivity(new Intent(MainActivity.this,appinfo.class));
+
+        } else if (id == R.id.nav_contactus) {
+            String url = "http://www.tcs.com";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+
+        } else if (id == R.id.nav_exit) {
+
+            finish();
 
         }
 

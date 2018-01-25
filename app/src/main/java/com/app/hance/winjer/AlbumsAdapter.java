@@ -2,6 +2,7 @@ package com.app.hance.winjer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.PopupMenu;
@@ -20,11 +21,15 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * Created by HANCE on 02/01/2018.
  */
 
 public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHolder> {
+
+    public static final String MY_PREFS_NAME = "hpbPrefsFile";
 
     private Context mContext;
     private List<Album> albumList;
@@ -55,7 +60,10 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
                 @Override public void onClick(View v) {
                     int position = getAdapterPosition();
                     Log.e("hance",":::" + titles[position]);
-                    Snackbar.make(v, "Click detected on item " + position, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    SharedPreferences.Editor editor = mContext.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                    editor.putString("item", titles[position]);
+                    editor.apply();
+                    //Snackbar.make(v, "Click detected on item " + position, Snackbar.LENGTH_LONG).setAction("Action", null).show();
                     Intent intent = new Intent (v.getContext(), house_cleaning.class);
                     v.getContext().startActivity(intent);
                    /* Intent intent = new Intent (v.getContext(), house_cleaning.class);

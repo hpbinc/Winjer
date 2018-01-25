@@ -22,22 +22,30 @@
             <ImageView
                 android:id="@+id/thumbnail"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-
-                android:background="?attr/selectableItemBackgroundBorderless" />
+                android:layout_height="70dp"
+                android:scaleX=".7"
+                android:scaleY=".7"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+            <View
+                android:layout_width="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="1dp"
+                android:background="#141414"
+                android:id="@+id/view"
+                android:layout_below="@id/thumbnail"/>
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/thumbnail"
+                android:layout_height="match_parent"
+                android:layout_below="@id/view"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="5dp"
+                android:background="#fff"
                 android:paddingBottom="5dp"
-                android:textColor="@color/album_title"
-                android:textSize="10dp"
+                android:textColor="#000"
+                android:textSize="8dp"
                 android:gravity="center"/>
 
         </RelativeLayout>

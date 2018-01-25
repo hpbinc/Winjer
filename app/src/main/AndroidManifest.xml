@@ -2,13 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.hance.winjer">
 
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <application
         android:allowBackup="true"
@@ -17,10 +16,9 @@
         android:roundIcon="@mipmap/winjer_small11"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <meta-data android:name="com.google.android.geo.API_KEY"
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAV6Lg1yqnDXtdVi2YgOzWPzp_kTiVToZI" />
-
 
         <activity
             android:name=".splash"
@@ -28,16 +26,25 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />
-        <activity android:name=".house_cleaning"
-            android:theme="@style/AppThemeBar"/>
-        <activity android:name=".order_details" />
-        <activity android:name=".location_schedule"
+        <activity
+            android:name=".house_cleaning"
+            android:theme="@style/AppThemeBar" />
+        <activity android:name=".signup" />
+        <activity
+            android:name=".location_schedule"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".appinfo"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppThemeBar" />
+        <activity android:name=".place_order"
             android:theme="@style/AppThemeBar"></activity>
     </application>
 
