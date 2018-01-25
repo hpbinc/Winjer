@@ -25,7 +25,6 @@
                 android:layout_height="70dp"
                 android:scaleX=".7"
                 android:scaleY=".7"
-                android:foregroundTint="#ff0000"
                 android:background="?attr/selectableItemBackgroundBorderless"/>
             <View
                 android:layout_width="80dp"
