@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity
 
         initCollapsingToolbar();
 
-
-
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView2 = (RecyclerView) findViewById(R.id.recycler_view2);
 
@@ -72,6 +70,9 @@ public class MainActivity extends AppCompatActivity
 
         int mNoOfColumns = Utility.calculateNoOfColumns(getApplicationContext());
 
+        prepareAlbums();
+
+        prepareAlbums2();
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, mNoOfColumns);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -84,12 +85,6 @@ public class MainActivity extends AppCompatActivity
         //recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView2.setItemAnimator(new DefaultItemAnimator());
         recyclerView2.setAdapter(adapter2);
-
-        prepareAlbums();
-
-        prepareAlbums2();
-
-
 
         try {
             Glide.with(this).load(R.drawable.winjer_png).into((ImageView) findViewById(R.id.backdrop));
@@ -155,7 +150,6 @@ public class MainActivity extends AppCompatActivity
         a = new Album("Offer3", covers[2]);
         albumList2.add(a);
 
-        adapter2.notifyDataSetChanged();
     }
 
     private void prepareAlbums() {
@@ -216,8 +210,6 @@ public class MainActivity extends AppCompatActivity
 
         a = new Album("CAKE", covers[13]);
         albumList.add(a);
-
-        adapter.notifyDataSetChanged();
 
     }
 
