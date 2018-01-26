@@ -10,6 +10,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -33,9 +34,9 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    private RecyclerView recyclerView;
-    private AlbumsAdapter adapter;
-    private List<Album> albumList;
+    private RecyclerView recyclerView ,recyclerView2;
+    private AlbumsAdapter adapter, adapter2;
+    private List<Album> albumList,albumList2;
 
 
     public static class Utility {
@@ -61,11 +62,16 @@ public class MainActivity extends AppCompatActivity
 
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView2 = (RecyclerView) findViewById(R.id.recycler_view2);
 
         albumList = new ArrayList<>();
-        adapter = new AlbumsAdapter(this, albumList);
+        albumList2 = new ArrayList<>();
+
+        adapter = new AlbumsAdapter(this, albumList , R.layout.album_card);
+        adapter2 = new AlbumsAdapter(this, albumList2 , R.layout.singlecard);
 
         int mNoOfColumns = Utility.calculateNoOfColumns(getApplicationContext());
+
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, mNoOfColumns);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -73,7 +79,17 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
+        RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView2.setLayoutManager(mLayoutManager2);
+        //recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        recyclerView2.setItemAnimator(new DefaultItemAnimator());
+        recyclerView2.setAdapter(adapter2);
+
         prepareAlbums();
+
+        prepareAlbums2();
+
+
 
         try {
             Glide.with(this).load(R.drawable.winjer_png).into((ImageView) findViewById(R.id.backdrop));
@@ -114,7 +130,7 @@ public class MainActivity extends AppCompatActivity
                     collapsingToolbar.setTitle(getString(R.string.app_name));
                     isShow = true;
                 } else if (isShow) {
-                    collapsingToolbar.setTitle(" ");
+                    collapsingToolbar.setTitle("");
                     isShow = false;
                 }
             }
@@ -124,6 +140,24 @@ public class MainActivity extends AppCompatActivity
     /**
      * Adding few albums for testing
      */
+    private void prepareAlbums2() {
+        int[] covers = new int[]{
+                R.drawable.offer1,
+                R.drawable.offer2,
+                R.drawable.offer3};
+
+        Album a = new Album("Offer 1", covers[0]);
+        albumList2.add(a);
+
+        a = new Album("Offer 2", covers[1]);
+        albumList2.add(a);
+
+        a = new Album("Offer3", covers[2]);
+        albumList2.add(a);
+
+        adapter2.notifyDataSetChanged();
+    }
+
     private void prepareAlbums() {
         int[] covers = new int[]{
                 R.drawable.basiccleaning,
@@ -184,6 +218,7 @@ public class MainActivity extends AppCompatActivity
         albumList.add(a);
 
         adapter.notifyDataSetChanged();
+
     }
 
 
@@ -284,7 +319,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this,appinfo.class));
 
         } else if (id == R.id.nav_contactus) {
-            String url = "http://www.tcs.com";
+            String url = "http://www.joboy.in";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);

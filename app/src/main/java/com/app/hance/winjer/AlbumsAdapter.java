@@ -31,15 +31,13 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
 
     public static final String MY_PREFS_NAME = "hpbPrefsFile";
 
+    public int no;
+
     private Context mContext;
     private List<Album> albumList;
-    private String[] titles = {"House Cleaning",
-            "Apartment Cleaning",
-            "Office Cleaning",
-            "Commercial Cleaning",
-            "Sofa Cleaning",
-            "Carpet Cleaning",
-            "House Keeping Service"};
+    private String[] titles = {"BASIC CLEANING","DEEP CLEANING","PARTY CLEANING","WASHING AND IRONING","DRY CLEANING",
+            "AC SERVICE","ELECTRICAL","PLUMBING","MOBILE REPAIR","TV REPAIR","PHOTOGRAPHY","EVENT MANAGEMENT",
+            "TAILORING","CAKE"};
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, count;
@@ -49,6 +47,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+
         /*    Typeface zeronero= Typeface.createFromAsset(view.getContext().getAssets(),"fonts/zeronero.ttf");
             Typeface anson=Typeface.createFromAsset(view.getContext().getAssets(),"fonts/Anson-Regular.otf");
             Typeface gillsans=Typeface.createFromAsset(view.getContext().getAssets(),"fonts/gillsans.ttf");
@@ -76,15 +75,16 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
     }
 
 
-    public AlbumsAdapter(Context mContext, List<Album> albumList) {
+    public AlbumsAdapter(Context mContext, List<Album> albumList , int no) {
         this.mContext = mContext;
         this.albumList = albumList;
+        this.no = no;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.album_card, parent, false);
+                .inflate(no, parent, false);
 
         return new MyViewHolder(itemView);
     }
