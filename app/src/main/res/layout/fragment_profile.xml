@@ -1,0 +1,100 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.app.hance.winjer.profile">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:elevation="4dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/coverprofile"
+            android:foregroundTint="@color/cast_intro_overlay_background_color">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/item_image"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:src="@drawable/nav_banner"
+                android:elevation="4dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HANCE PAUL BENNY"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:layout_below="@id/item_image"
+                />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="16dp"
+        android:background="#d4d1d1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  Email:  hancepbenny@gmail.com"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
+            android:textSize="16sp"
+            android:textColor="#141414"
+            android:drawableTintMode="src_over"
+            android:backgroundTint="#00eaff"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  Mobile:  +91 8606099181"
+            android:drawableLeft="@drawable/ic_phone_iphone_black_24dp"
+            android:layout_marginTop="30dp"
+            android:textSize="16sp"
+            android:textColor="#141414"
+            android:drawableTintMode="src_over"
+            android:backgroundTint="#00eaff"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  Location:  Kothamangalam"
+            android:drawableLeft="@drawable/ic_my_location_black_24dp"
+            android:layout_marginTop="30dp"
+            android:textSize="16sp"
+            android:textColor="#141414"
+            android:drawableTintMode="src_over"
+            android:backgroundTint="#00eaff"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</FrameLayout>

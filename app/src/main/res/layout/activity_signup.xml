@@ -1,121 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="18dp"
-    android:paddingRight="18dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="none"
     android:paddingTop="@dimen/activity_vertical_margin">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none">
-        <LinearLayout
+        android:orientation="vertical"
+        >
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Sign Up"
+    android:textStyle="bold"
+    android:layout_below="@id/horiview"
+    android:gravity="left"
+    android:textColor="#000"
+    android:textSize="20dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:id="@+id/signup"
+    />
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainname"
+        android:layout_below="@id/signup"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:fletPadding="5dp">
+
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:id="@+id/name"
+            android:paddingLeft="10dp"/>
 
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center_horizontal"
-                android:padding="16dp"
-                android:layout_marginTop="70dp"
-                android:layout_marginBottom="16dp"
-                android:src="@mipmap/winjer_small11"
-                android:scaleX=".4"
-                android:scaleY=".4"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textCapCharacters"
-                android:ems="10"
-                android:id="@+id/name"
-                android:background="@android:color/transparent"
-                android:padding="12dp"
-                android:drawablePadding="12dp"
-                android:hint="Name"/>
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainname"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/mainemail"
+        app:fletPaddingBottom="5dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:id="@+id/email"
+            android:paddingLeft="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#fff" />
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:ems="10"
-                android:drawablePadding="12dp"
-                android:padding="12dp"
-                android:hint="Email id"
-                android:background="@android:color/transparent"
-                android:maxLines="1"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#fff"
-                android:id="@+id/view2"/>
-            <EditText
-                android:id="@+id/address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords"
-                android:ems="10"
-                android:drawablePadding="12dp"
-                android:padding="12dp"
-                android:hint="Address"
-                android:background="@android:color/transparent"
-                android:maxLines="1"/>
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainemail"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/mainnumber"
+        app:fletPaddingBottom="5dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#fff"
-                android:id="@+id/view3"/>
-            <EditText
-                android:id="@+id/mobileNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:drawablePadding="12dp"
-                android:padding="12dp"
-                android:hint="Mobile Number"
-                android:background="@android:color/transparent"
-                android:maxLines="1"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mobile No."
+            android:id="@+id/mobile"
+            android:paddingLeft="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#fff"
-                android:id="@+id/view4"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/nextbutton"
+        android:background="#141414"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:onClick="signup"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingRight="20dp"
+        android:text="sign up"
+        android:textColor="@android:color/white" />
 
+    </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/submit"
-                android:background="@drawable/buttonstyle"
-                android:text="Submit"
-                android:textAllCaps="false"
-                android:textStyle="normal"
-                android:clickable="true"
-                android:textSize="18sp"
-                android:textColor="#fff"
-                android:padding="16dp"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_marginTop="35dp"/>
-
-
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+</ScrollView>

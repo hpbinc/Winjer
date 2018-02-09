@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:float="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
     tools:context="com.app.hance.winjer.location_schedule"
     android:scrollbars="none">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
         android:layout_height="match_parent">
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Schedule Booking"
+            android:textStyle="bold"
             android:gravity="left"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:background="#141414"
+            android:textColor="#fff"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp"
             android:id="@+id/schedule"/>
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_marginTop="15dp"
+            android:paddingTop="15dp"
             android:layout_height="wrap_content"
             android:scrollbars="none"
+            android:background="#141414"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:layout_marginBottom="10dp"
-
             android:id="@+id/horiview"
             android:layout_below="@id/schedule">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
                 android:layout_height="wrap_content">
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="JAN 15\nMON"
-                    android:layout_marginLeft="2dp"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="#fff"
                     android:background="@drawable/button_transparent"
                     android:id="@+id/date1"
                     android:focusable="true"
@@ -59,6 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="JAN 16\nTUE"
+                    android:textColor="#fff"
                     android:layout_marginLeft="25dp"
                     android:background="@drawable/button_transparent"
                     android:id="@+id/date2"
@@ -69,6 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="JAN 17\nWED"
+                    android:textColor="#fff"
                     android:layout_marginLeft="25dp"
                     android:background="@drawable/button_transparent"
                     android:id="@+id/date3"
@@ -79,6 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="JAN 18\nTHU"
+                    android:textColor="#fff"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/button_transparent"
                     android:id="@+id/date4"
@@ -89,6 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="JAN 19\nFRI"
+                    android:textColor="#fff"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/button_transparent"
                     android:id="@+id/date5"
@@ -99,6 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="JAN 20\nSAT"
+                    android:textColor="#fff"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/button_transparent"
                     android:id="@+id/date6"
@@ -109,6 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="JAN 21\nSUN"
+                    android:textColor="#fff"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/button_transparent"
                     android:id="@+id/date7"
@@ -124,24 +132,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Address"
-
-            android:layout_below="@+id/horiview"
+            android:textStyle="bold"
+            android:layout_below="@id/horiview"
             android:gravity="left"
             android:textColor="#000"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:id="@+id/textaddress"
             />
 
-
-
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/mainhouse"
-            android:layout_below="@+id/textaddress"
-            float:fletPadding="10dp">
+            android:layout_below="@id/textaddress"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            float:fletPadding="5dp">
 
             <EditText
                 android:layout_width="match_parent"
@@ -153,13 +161,12 @@
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
 
-
-
-
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/mainhouse"
+            android:layout_below="@id/mainhouse"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:id="@+id/mainlocality"
             float:fletPaddingBottom="5dp">
 
@@ -176,7 +183,9 @@
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/mainlocality"
+            android:layout_below="@id/mainlocality"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:id="@+id/mainpin"
             float:fletPaddingBottom="5dp">
 
@@ -192,16 +201,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:padding="16dp"
-            android:layout_below="@+id/horiview"
-            android:layout_toRightOf="@+id/textaddress"
-
-            android:layout_marginLeft="120dp"
+            android:layout_below="@id/horiview"
+            android:layout_toRightOf="@id/textaddress"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="160dp"
+            android:layout_marginRight="20dp"
             android:text=" get my Location "
             android:onClick="locat"
             android:focusable="true"
             android:foreground="@drawable/ripple_custom"
-
             android:background="@drawable/buttonstyle"
             android:id="@+id/button"
             android:textSize="10dp"
@@ -214,6 +222,8 @@
             android:id="@+id/place_autocomplete_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
             tools:layout_editor_absoluteY="0dp"
             android:layout_below="@id/mainpin"
@@ -223,7 +233,9 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/place_autocomplete_fragment"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_below="@id/place_autocomplete_fragment"
             android:id="@+id/view"
             android:background="#808080"/>
 
@@ -231,7 +243,9 @@
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/view"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/view"
             android:id="@+id/mainmobile"
             float:fletPaddingBottom="5dp">
 
@@ -249,6 +263,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/mainmobile"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
             android:id="@+id/mainremarks"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_transparent"
@@ -262,7 +278,6 @@
                 android:layout_gravity="left"
                 android:layout_marginBottom="10dp"
                 android:hint="Other info"
-
                 android:id="@+id/remarks"
                 android:paddingLeft="10dp"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
@@ -273,12 +288,14 @@
             android:text="Place order"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:background="#000"
+            android:background="#141414"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:textColor="#fff"
             android:layout_below="@id/mainremarks"
             android:clickable="true"
-            android:onClick="placeorder"
             android:focusable="true"
+            android:onClick="confirm"
             android:foreground="@drawable/ripple_custom"
             />
 

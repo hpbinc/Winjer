@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class location_schedule extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,View.OnClickListener  {
 
@@ -56,10 +58,10 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
 
 
     private void setFocus(Button btn_unfocus, Button btn_focus){
-        btn_unfocus.setTextColor(Color.rgb(49, 50, 51));
+
         btn_unfocus.setBackground(getDrawable(R.drawable.button_transparent));
-        btn_focus.setTextColor(Color.BLUE);
-        btn_focus.setBackground(getDrawable(R.drawable.button_transparent));
+        btn_focus.setTextColor(Color.WHITE);
+        btn_focus.setBackground(getDrawable(R.drawable.buttonstyle2));
         this.btn_unfocus = btn_focus;
     }
 
@@ -102,10 +104,15 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_schedule);
 
+        //font
+
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this,"Roboto.ttf",true);
+
         //hashim
         date = new Button[7];
         for(int i = 0; i < date.length; i++){
-            date[i] = (Button) findViewById(btn_id[i]);
+            date[i] = findViewById(btn_id[i]);
             //date[i].setBackgroundColor(Color.rgb(207, 207, 207));
             date[i].setOnClickListener(this);
         }
@@ -117,7 +124,7 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
 
         setFocus(btn_unfocus,date[0]);
 
-        btnGetLastLocation = (Button) findViewById(R.id.button);
+        btnGetLastLocation = findViewById(R.id.button);
         btnGetLastLocation.setOnClickListener(btnGetLastLocationOnClickListener);
         //textLastLocation = (TextView) findViewById(R.id.lastlocation);
 
@@ -274,8 +281,8 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
                     //      + addresses.get(0).getSubLocality() + addresses.get(0).getPostalCode(), Toast.LENGTH_SHORT).show();
 
 
-                    EditText locality=(EditText) findViewById(R.id.locality);
-                    EditText pin=(EditText)findViewById(R.id.pin);
+                    EditText locality= findViewById(R.id.locality);
+                    EditText pin= findViewById(R.id.pin);
                     locality.setText(addresses.get(0).getSubLocality()+","+addresses.get(0).getLocality());
                     pin.setText(addresses.get(0).getPostalCode());
 
@@ -297,25 +304,19 @@ public class location_schedule extends AppCompatActivity implements GoogleApiCli
     }
 
 
-    public void placeorder(View v)
+    public void confirm(View v)
     {
 
-        EditText house = (EditText)findViewById(R.id.house);
-        EditText locality = (EditText)findViewById(R.id.locality);
-        EditText pin = (EditText)findViewById(R.id.pin);
-        EditText mobile = (EditText)findViewById(R.id.mobile);
+        EditText house = findViewById(R.id.house);
+        EditText locality = findViewById(R.id.locality);
+        EditText pin = findViewById(R.id.pin);
+        EditText mobile = findViewById(R.id.mobile);
 
         String h = house.getText().toString();
         String l = locality.getText().toString();
         String p = pin.getText().toString();
         String m = mobile.getText().toString();
 
-        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-        editor.putString("house", h);
-        editor.putString("locality", l);
-        editor.putString("pin", p);
-        editor.putString("mobile", m);
-        editor.apply();
         Intent i = new Intent(this,place_order.class);
         startActivity(i);
     }

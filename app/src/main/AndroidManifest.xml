@@ -11,9 +11,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/winjer_small11"
+        android:icon="@mipmap/ic_winjer_white"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/winjer_small11"
+        android:roundIcon="@mipmap/ic_winjer_white"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
@@ -31,21 +31,131 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" />
+            android:name=".realfirst"
+            android:label="Winjer"
+            android:theme="@style/AppTheme" />
         <activity
-            android:name=".house_cleaning"
+            android:name=".basic_cleaning_old"
+            android:parentActivityName=".realfirst"
             android:theme="@style/AppThemeBar" />
-        <activity android:name=".signup" />
+        <activity
+            android:name=".signup"
+            android:label="Sign up"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
         <activity
             android:name=".location_schedule"
+            android:parentActivityName=".realfirst"
             android:theme="@style/AppThemeBar" />
         <activity
             android:name=".appinfo"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".realfirst"
             android:theme="@style/AppThemeBar" />
-        <activity android:name=".place_order"
-            android:theme="@style/AppThemeBar"></activity>
+        <activity
+            android:name=".place_order"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".basic_cleaning"
+            android:label="Basic Cleaning"
+            android:parentActivityName=".basic_cleaning_old"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".roofwork"
+            android:label="Roof Work"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".plumbing"
+            android:label="Plumbing"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".electrical"
+            android:label="Electrical"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".mobile"
+            android:label="Mobile Repair"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".acrepair"
+            android:label="AC SERVICE"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".tvrepair"
+            android:label="TV Repair"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".drycleaning"
+            android:label="Dry Cleaning"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".painting"
+            android:label="Painting"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".afterparty"
+            android:label="After Party"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".lab"
+            android:label="Lab"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".washing_ironing"
+            android:label="Washing and Ironing"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".sofa"
+            android:label="Sofa"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".tailoring"
+            android:label="Tailoring"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".event"
+            android:label="Event Management"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".cake"
+            android:label="Cake"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".carpet"
+            android:label="Carpet Cleaning"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".deep_cleaning"
+            android:label="Deep Cleaning"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity android:name=".commercial" />
+        <activity android:name=".housekeeping" />
+        <activity
+            android:name=".deep_cleaningselect"
+            android:label="Deep Cleaning"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
+        <activity
+            android:name=".photography"
+            android:label="Photography"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
     </application>
 
 </manifest>

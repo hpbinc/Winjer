@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class splash extends AppCompatActivity implements Animation.AnimationListener {
 
     private ImageView mFbLogoImageView;
@@ -32,6 +34,11 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        //font
+
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this,"Roboto.ttf",true);
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
@@ -39,22 +46,14 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
             START_ANIMATION = savedInstanceState.getBoolean("START_ANIMATION");
         }
 
-        mFbLogoImageView = (ImageView) findViewById(R.id.fbLogoImageView);
+        mFbLogoImageView = findViewById(R.id.fbLogoImageView);
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
 
-            textView = (TextView) findViewById(R.id.textView);
-            mimos= (TextView) findViewById(R.id.mimos);
-   /*         Typeface zeronero= Typeface.createFromAsset(getAssets(),"fonts/zeronero.ttf");
-            Typeface anson=Typeface.createFromAsset(getAssets(),"fonts/Anson-Regular.otf");
-            Typeface gillsans=Typeface.createFromAsset(getAssets(),"fonts/gillsans.ttf");
-            Typeface vampire=Typeface.createFromAsset(getAssets(),"fonts/vampire.ttf");
+            textView = findViewById(R.id.textView);
+            mimos= findViewById(R.id.mimos);
 
-
-            textView.setTypeface(anson);
-            mimos.setTypeface(anson);
-            */
         //mNewAccountButton = (Button) findViewById(R.id.newAccountButton);
-        mFbLogoStaticImageView = (ImageView) findViewById(R.id.fbLogoStaticImageView);
+        mFbLogoStaticImageView = findViewById(R.id.fbLogoStaticImageView);
 
         if(START_ANIMATION) {
             if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
@@ -103,7 +102,7 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
                 try {
 
                     sleep(2000);
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),realfirst.class);
                     startActivity(intent);
                     finish();
 
@@ -174,5 +173,17 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
 
         outState.putBoolean("START_ANIMATION", false);
     }
+
+    public static class Utility {
+        public static int calculateNoOfColumns(Context context) {
+            DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+            float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
+            int noOfColumns = (int) (dpWidth / 100);
+            return noOfColumns;
+        }
+    }
+
+
 }
+
 

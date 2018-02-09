@@ -1,0 +1,86 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:scrollbars="none" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="16dp"
+                    android:background="#d4d1d1"
+                    android:id="@+id/view1"
+                    android:layout_below="@id/recycler_view"/>
+
+
+                <TextView
+                    android:text="Hot offers"
+                    android:textSize="20sp"
+                    android:layout_below="@id/view1"
+                    android:id="@+id/hotoffers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:textColor="#000"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"/>
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view2"
+                    android:layout_below="@id/hotoffers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:scrollbars="none" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="16dp"
+                    android:background="#d4d1d1"
+                    android:id="@+id/view2"
+                    android:layout_below="@id/recycler_view2"/>
+
+
+                <TextView
+                    android:text="Home Cleaning"
+                    android:textSize="20sp"
+                    android:layout_below="@id/view2"
+                    android:id="@+id/homecleaning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:textColor="#000"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view3"
+                    android:layout_below="@id/homecleaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:scrollbars="none" />
+
+        </RelativeLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
+
+</FrameLayout>
