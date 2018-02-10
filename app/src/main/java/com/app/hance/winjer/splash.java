@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -16,6 +17,18 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import me.anwarshahriar.calligrapher.Calligrapher;
 
@@ -28,11 +41,150 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
 
     private Boolean ANIMATION_ENDED = false;
     private Boolean START_ANIMATION = true;
+    private Boolean response_recieved=false;
+
+    public static data info;
+    String url="http://tnpmace.com/testingAPI/Booking/listDescriptionOnly";
+    RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        //Recieve service infos..
+        requestQueue = Volley.newRequestQueue(this);
+
+        JsonObjectRequest jor = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        try{
+
+                            info=new data();
+
+
+                            Log.e("Response", response.toString());
+
+                            JSONArray jarray = response.getJSONArray("services");
+
+
+                            for(int i=0; i < jarray.length(); i++) {
+
+                                JSONObject jsonObject = jarray.getJSONObject(i);
+
+                                String type = jsonObject.getString("type");
+
+                                if(type.equals("plumbing"))
+                                {
+
+                                    info.setPlumbing_info(""+jsonObject.get("type_description"));
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+                                if(type.equals("TV"))
+                                {
+
+                                    info.setTvrepair_info(""+jsonObject.get("type_description"));
+
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+                                if(type.equals("electrical"))
+                                {
+                                    info.setElectrical_info(""+jsonObject.get("type_description"));
+
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+                                if(type.equals("lab"))
+                                {
+
+                                    info.setLab(""+jsonObject.get("type_description"));
+
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+                                if(type.equals("ac"))
+                                {
+
+                                    info.setAcinfo(""+jsonObject.get("type_description"));
+
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+                                if(type.equals("drycleaning"))
+                                {
+
+                                    info.setDrycleaning_info(""+jsonObject.get("type_description"));
+
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+                                if(type.equals("painting"))
+                                {
+
+                                    info.setPainting_info(""+jsonObject.get("type_description"));
+
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+                                if(type.equals("mobile_repair"))
+                                {
+
+                                    info.setMobilerepair_info(""+jsonObject.get("type_description"));
+
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+
+
+                            }
+
+                            if( ANIMATION_ENDED)
+                            {
+
+                                Intent intent = new Intent(getApplicationContext(),realfirst.class);
+                                startActivity(intent);
+                                finish();
+
+                            }
+                            else
+                            {
+
+                                response_recieved=true;
+
+
+                            }
+
+
+                        }catch(JSONException e)
+                        {   e.printStackTrace();
+                            Toast.makeText(splash.this, " Network Error Occured ", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Volley","Error");
+
+                    }
+                }
+        );
+        requestQueue.add(jor);
+
+
 
         //font
 
@@ -102,9 +254,11 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
                 try {
 
                     sleep(2000);
-                    Intent intent = new Intent(getApplicationContext(),realfirst.class);
-                    startActivity(intent);
-                    finish();
+                    if (response_recieved) {
+                        Intent intent = new Intent(getApplicationContext(), realfirst.class);
+                        startActivity(intent);
+                        finish();
+                    }
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();

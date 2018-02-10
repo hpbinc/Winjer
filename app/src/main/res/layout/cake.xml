@@ -1,0 +1,122 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardElevation="3dp"
+        android:focusable="true"
+        android:foreground="@drawable/ripple_custom"
+        card_view:contentPadding="0dp">
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="5dp"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:text="shirts"
+
+                android:textColor="#000"
+                android:background="#fff"
+                android:id="@+id/image"
+                android:gravity="center|center_vertical"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Black Forest"
+                android:id="@+id/cakename"
+                android:layout_marginTop="5dp"
+                android:textSize="10dp"
+                android:textColor="#000"
+                android:layout_below="@id/image"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pricehead"
+                android:text="Price"
+                android:layout_below="@+id/cakename"
+
+                android:textSize="10sp"
+                android:typeface="monospace"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pricehead"
+                android:id="@+id/discount"
+                android:textSize="8sp"
+                android:layout_marginTop="10dp"
+                android:text="(Inclusive of all taxes)"
+                android:textColor="#05b722"
+
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+
+                android:layout_below="@+id/pricehead"
+                android:id="@+id/price"
+                android:textSize="15sp"
+                android:layout_marginBottom="5dp"
+
+                android:gravity="bottom"
+                android:text="₹ 475"
+                android:textColor="#05b722"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/price"
+                android:id="@+id/oldprice"
+                android:textSize="7sp"
+
+
+
+                android:gravity="bottom"
+                android:text=" Market price ₹500  "
+                android:textColor="#838282"
+
+
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/oldprice"
+                android:layout_marginTop="10dp"
+                android:background="#d4d1d1"
+                android:id="@+id/line1"
+
+                />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -33,7 +33,7 @@
         <activity
             android:name=".realfirst"
             android:label="Winjer"
-            android:theme="@style/AppTheme" />
+             />
         <activity
             android:name=".basic_cleaning_old"
             android:parentActivityName=".realfirst"
@@ -133,7 +133,7 @@
             android:name=".cake"
             android:label="Cake"
             android:parentActivityName=".realfirst"
-            android:theme="@style/AppThemeBar" />
+        />
         <activity
             android:name=".carpet"
             android:label="Carpet Cleaning"
