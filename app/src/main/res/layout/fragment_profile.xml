@@ -1,8 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.app.hance.winjer.profile">
 
 <LinearLayout
@@ -13,37 +13,36 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_margin="5dp"
         android:elevation="4dp"
-        app:cardCornerRadius="10dp"
-        android:layout_margin="5dp">
+        app:cardCornerRadius="10dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@drawable/coverprofile"
-            android:foregroundTint="@color/cast_intro_overlay_background_color">
+            android:background="@drawable/coverprofile">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
+                android:id="@+id/item_image"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:id="@+id/item_image"
-                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:src="@drawable/nav_banner"
                 android:elevation="4dp"
+                android:src="@drawable/nav_banner"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="HANCE PAUL BENNY"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textColor="#fff"
-                android:textStyle="bold"
                 android:layout_below="@id/item_image"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="HANCE PAUL BENNY"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 />
         </RelativeLayout>
 
@@ -64,34 +63,34 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="  Email:  hancepbenny@gmail.com"
+            android:backgroundTint="#00eaff"
             android:drawableLeft="@drawable/ic_email_black_24dp"
-            android:textSize="16sp"
-            android:textColor="#141414"
             android:drawableTintMode="src_over"
-            android:backgroundTint="#00eaff"/>
+            android:text="  Email:  hancepbenny@gmail.com"
+            android:textColor="#141414"
+            android:textSize="16sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="  Mobile:  +91 8606099181"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#00eaff"
             android:drawableLeft="@drawable/ic_phone_iphone_black_24dp"
-            android:layout_marginTop="30dp"
-            android:textSize="16sp"
-            android:textColor="#141414"
             android:drawableTintMode="src_over"
-            android:backgroundTint="#00eaff"/>
+            android:text="  Mobile:  +91 8606099181"
+            android:textColor="#141414"
+            android:textSize="16sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="  Location:  Kothamangalam"
-            android:drawableLeft="@drawable/ic_my_location_black_24dp"
             android:layout_marginTop="30dp"
-            android:textSize="16sp"
-            android:textColor="#141414"
+            android:backgroundTint="#00eaff"
+            android:drawableLeft="@drawable/ic_my_location_black_24dp"
             android:drawableTintMode="src_over"
-            android:backgroundTint="#00eaff"/>
+            android:text="  Location:  Kothamangalam"
+            android:textColor="#141414"
+            android:textSize="16sp"/>
 
     </LinearLayout>
 

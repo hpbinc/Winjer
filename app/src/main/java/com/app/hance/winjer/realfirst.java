@@ -27,20 +27,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
-
 import me.anwarshahriar.calligrapher.Calligrapher;
-
-//firebase
 
 public class realfirst extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private boolean backbutton = false;
     String Token;
     boolean thread_running = true;
-
+    private boolean backbutton = false;
     private BottomNavigationView bottomNavigation;
     private Fragment fragment;
     private FragmentManager fragmentManager;
@@ -204,7 +198,11 @@ public class realfirst extends AppCompatActivity
 
             startActivity(new Intent(realfirst.this,realfirst.class));
 
-        } else if (id == R.id.nav_settings) {
+        } else if (id == R.id.nav_login) {
+
+            startActivity(new Intent(realfirst.this,signup.class));
+
+        }else if (id == R.id.nav_settings) {
 
             startActivity(new Intent(realfirst.this,location_schedule.class));
 
