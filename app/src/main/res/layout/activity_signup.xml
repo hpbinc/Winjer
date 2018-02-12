@@ -132,7 +132,6 @@
 
         </LinearLayout>
 
-
             <Button
                 android:id="@+id/gButton"
                 android:layout_width="200dp"
