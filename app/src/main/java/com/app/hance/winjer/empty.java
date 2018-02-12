@@ -92,10 +92,8 @@ public class empty extends android.support.v4.app.Fragment {
         recyclerView2.setItemAnimator(new DefaultItemAnimator());
         recyclerView2.setAdapter(adapter2);
 
-        RecyclerView.LayoutManager mLayoutManager3 = new GridLayoutManager(getContext(), mNoOfColumns);
-        int spanCount = 1;
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), spanCount, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView3.setLayoutManager(gridLayoutManager);
+        RecyclerView.LayoutManager mLayoutManager3 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+         recyclerView3.setLayoutManager(mLayoutManager3);
         //recyclerView3.setLayoutManager(mLayoutManager3);
         //recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView3.setItemAnimator(new DefaultItemAnimator());

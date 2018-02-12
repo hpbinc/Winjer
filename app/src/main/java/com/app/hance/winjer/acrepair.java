@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import me.anwarshahriar.calligrapher.Calligrapher;
 
@@ -18,6 +19,10 @@ public class acrepair extends AppCompatActivity {
 
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this,"Roboto.ttf",true);
+
+        TextView text=(TextView)findViewById(R.id.about);
+        text.setText(splash.info.getAcinfo());
+
     }
 
     public void bookservice(View v)
