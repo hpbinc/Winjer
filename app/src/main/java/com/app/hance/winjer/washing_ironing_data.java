@@ -6,6 +6,7 @@ package com.app.hance.winjer;
 
 public class washing_ironing_data {
 
+    static float amount;
     String name;
     float price;
     int count=0;

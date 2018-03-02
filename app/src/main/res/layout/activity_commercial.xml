@@ -1,11 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.app.hance.winjer.commercial">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/tailoringback"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:text="COMMERCIAL"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line1"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_verified_user_black_24dp"
+                android:text="  Our Promise"
+                android:textColor="#141414"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="We provide highly trained professional staffs."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_thumb_up_black_24dp"
+                android:text="  Service guaranteed"
+                android:textColor="#141414"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="100% service guaranteed."/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_filter_vintage_black_24dp"
+                android:text="  Customer Protection"
+                android:textColor="#141414"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="We assure 100% safety."/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:background="#d4d1d1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingLeft="16dp"
+            android:text="Machinery's"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:gravity="right|left"
+            android:lineSpacingExtra="7dp"
+            android:paddingLeft="40dp"
+            android:text="\u2022 Single disk scraber\n\u2022 High pressure jet\n\u2022 Floor cleaning machine\n\u2022 Steam cleaner\n\u2022 Vacuum cleaners\n\u2022 Blowers\n\u2022 Branded Chemicals \n\u2022 Glass cleaners"
+            android:textSize="13sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:background="#d4d1d1"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/pricehead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                />
+
+            <TextView
+                android:id="@+id/pricewrite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pricehead"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Cost per sq.ft : "
+                android:textColor="#ff5900"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pricehead"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/pricewrite"
+                android:text="   ₹3.5/-"
+                android:textColor="#ff5900"
+                android:textSize="15sp"/>
+
+
+        </RelativeLayout>
 
 
 
-</LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#141414"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_custom"
+            android:onClick="bookservice"
+            android:text="Book Service"
+            android:textColor="#fff"
+            />
+    </LinearLayout>
+
+</ScrollView>

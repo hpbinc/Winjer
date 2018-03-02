@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -26,17 +25,12 @@ import worker8.com.github.radiogroupplus.RadioGroupPlus;
 
 public class deep_cleaningselect extends AppCompatActivity implements View.OnClickListener {
 
-    String url="http://tnpmace.com/testingAPI/Booking/listDeepCleaningServices";
-
-    RequestQueue requestQueue;
-    cleaningdata apartcleaningdata,homecleaningdata;
 
     RadioGroupPlus mRadioGroupPlus;
-
-    private int[] btn_id = {R.id.date1, R.id.date2};
-
+    String hometype="home";
+    cleaningdata apartcleaningdata,homecleaningdata;
     Button date[];
-
+    private int[] btn_id = {R.id.date1, R.id.date2};
     private Button btn_unfocus;
 
     private void setFocus(Button btn_unfocus, Button btn_focus){
@@ -54,10 +48,12 @@ public class deep_cleaningselect extends AppCompatActivity implements View.OnCli
         switch (v.getId()){
             case R.id.date1 :
                 setFocus(btn_unfocus, date[0]);
+                hometype="home";
                 break;
 
             case R.id.date2 :
                 setFocus(btn_unfocus, date[1]);
+                hometype="appartments";
                 break;
         }
     }
@@ -73,7 +69,6 @@ public class deep_cleaningselect extends AppCompatActivity implements View.OnCli
 
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this,"Roboto.ttf",true);
-
 
         date = new Button[2];
         for(int i = 0; i < date.length; i++){
@@ -97,136 +92,35 @@ public class deep_cleaningselect extends AppCompatActivity implements View.OnCli
             }
         });
 
-      //get prices from server
-
-             apartcleaningdata=new cleaningdata();
-                    apartcleaningdata.setHome_type("apartment");
-
-             homecleaningdata=new cleaningdata();
-                    homecleaningdata.setHome_type("home");
-
-        requestQueue = Volley.newRequestQueue(this);
-
-        JsonObjectRequest jor = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-
-                        try{
-
-
-
-                            Log.e("Response", response.toString());
-
-                            JSONObject jsonObject_apart = response.getJSONObject("appartments");
-                            JSONObject jsonObject_home = response.getJSONObject("home");
-
-                            JSONArray apart=jsonObject_apart.getJSONArray("bhk");
-
-                            for(int i=0; i < apart.length(); i++) {
-
-                                JSONObject jsonObject = apart.getJSONObject(i);
-
-                                String bhk = jsonObject.getString("item");
-                                float amount=Float.valueOf(jsonObject.getString("amount"));
-                                float discount=Float.valueOf(jsonObject.getString("discount"));
-
-                                if (bhk.equals("1bhk"))
-                                    apartcleaningdata.setbhk(1,amount,discount);
-                                else if(bhk.equals("2bhk"))
-                                    apartcleaningdata.setbhk(2,amount,discount);
-                                else if(bhk.equals("3bhk"))
-                                    apartcleaningdata.setbhk(3,amount,discount);
-                                else if(bhk.equals("4bhk"))
-                                    apartcleaningdata.setbhk(4,amount,discount);
-                                else if(bhk.equals("5bhk"))
-                                    apartcleaningdata.setbhk(5,amount,discount);
-
-                                Log.e("\n\n\nResponse", jsonObject.toString());
-
-
-
-                            }
-
-                            JSONArray home=jsonObject_home.getJSONArray("bhk");
-
-                            for(int i=0; i < home.length(); i++) {
-
-                                JSONObject jsonObject = home.getJSONObject(i);
-
-                                String bhk = jsonObject.getString("item");
-                                Log.e("Hashim",bhk);
-                                float amount=Float.valueOf(jsonObject.getString("amount"));
-                                float discount=Float.valueOf(jsonObject.getString("discount"));
-
-                                if (bhk.equals("1bhk"))
-                                    homecleaningdata.setbhk(1,amount,discount);
-                                else if(bhk.equals("2bhk"))
-                                    homecleaningdata.setbhk(2,amount,discount);
-                                else if(bhk.equals("3bhk"))
-                                    homecleaningdata.setbhk(3,amount,discount);
-                                else if(bhk.equals("4bhk"))
-                                    homecleaningdata.setbhk(4,amount,discount);
-                                else if(bhk.equals("5bhk"))
-                                    homecleaningdata.setbhk(5,amount,discount);
-
-                                Log.e("\n\n\nResponse", jsonObject.toString());
-
-                            }
-
-                         //   home=jsonObject_home.getJSONArray("others");
-                         //   apart=jsonObject_apart.getJSONArray("others");
-
-                        //    homecleaningdata.setothers(Float.parseFloat(home.getString(0)),Float.parseFloat(home.getString(1)),Float.parseFloat(home.getString(2)),Float.parseFloat(home.getString(3)));
-                        //    apartcleaningdata.setothers(Float.parseFloat(apart.getString(0)),Float.parseFloat(apart.getString(1)),Float.parseFloat(apart.getString(2)),Float.parseFloat(apart.getString(3)));
-
-
-
-                        for(int i=1;i<5;i++)
-                        {
-
-                            Log.e("home value"," "+homecleaningdata.getpricebhk(i) +" "+homecleaningdata.getdiscountbhk(i));
-                            Log.e("apart value"," "+apartcleaningdata.getpricebhk(i)+"  "+homecleaningdata.getdiscountbhk(i));
-
-
-
-                        }
-
-
-
-
-                        }catch(JSONException e)
-                        {e.printStackTrace();}
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e("Volley","Error");
-
-                    }
-                }
-        );
-        requestQueue.add(jor);
-
-
-
-
     }
 
     public void onOrderClicked(View view) {
         if (R.id.rb_1bhk == mRadioGroupPlus.getCheckedRadioButtonId()) {
-            Toast.makeText(this, ""+homecleaningdata.getpricebhk(1), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(basic_cleaning_old.this, "Latte", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(deep_cleaningselect.this,deep_cleaning.class);
+            i.putExtra("bhk","1");
+            i.putExtra("hometype",hometype);
             startActivity(i);
         } else if (R.id.rb_2bhk == mRadioGroupPlus.getCheckedRadioButtonId()) {
-            Toast.makeText(this, ""+homecleaningdata.getpricebhk(2), Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(deep_cleaningselect.this,deep_cleaning.class);
+            i.putExtra("bhk","2");
+            i.putExtra("hometype",hometype);
+            startActivity(i);
         } else if (R.id.rb_3bhk == mRadioGroupPlus.getCheckedRadioButtonId()) {
-            Toast.makeText(this, ""+homecleaningdata.getpricebhk(3), Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(deep_cleaningselect.this,deep_cleaning.class);
+            i.putExtra("bhk","3");
+            i.putExtra("hometype",hometype);
+            startActivity(i);
         } else if (R.id.rb_4bhk == mRadioGroupPlus.getCheckedRadioButtonId()) {
-            //Toast.makeText(basic_cleaning_old.this, "Espresso", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(deep_cleaningselect.this,deep_cleaning.class);
+            i.putExtra("bhk","4");
+            i.putExtra("hometype",hometype);
+            startActivity(i);
         }  else {
-            //Toast.makeText(basic_cleaning_old.this, "No Drinks :(", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(deep_cleaningselect.this,deep_cleaning.class);
+            i.putExtra("bhk","5");
+            i.putExtra("hometype",hometype);
+            startActivity(i);
         }
     }
 }

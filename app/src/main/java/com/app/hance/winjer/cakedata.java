@@ -54,5 +54,10 @@ public class cakedata {
         return discount;
     }
 
+    public String getDescription() {
+
+        return Description;
+    }
+
 
 }

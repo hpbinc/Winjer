@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:orientation="vertical"
     android:scrollbars="none">
 
     <LinearLayout
@@ -12,55 +12,85 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/relative"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/relative">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="center"
-                android:src="@drawable/basic_cleaning"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/labback"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LAB"
+                android:layout_alignParentBottom="true"
                 android:paddingBottom="5dp"
                 android:paddingLeft="10dp"
+                android:text="LAB"
+                android:textColor="#fff"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                android:textColor="#fff"
-                android:layout_alignParentBottom="true"
                 />
 
         </RelativeLayout>
 
-
-        <TextView
+        <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Description"
-            android:gravity="left"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:paddingLeft="10dp"
-            android:layout_marginTop="16dp"
-            android:textStyle="bold"/>
+            android:layout_below="@id/line1"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@android:color/transparent"
-            android:text="put desc here"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/about"
-            android:lineSpacingExtra="7dp"
-            android:layout_gravity="center_vertical|right"
-            android:gravity="right|left"
-            android:textSize="13sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_verified_user_black_24dp"
+                android:text="  Our Promise"
+                android:textColor="#141414"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="We provide highly trained professional staffs."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_thumb_up_black_24dp"
+                android:text="  Service guaranteed"
+                android:textColor="#141414"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="Up to 15 days."/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_filter_vintage_black_24dp"
+                android:text="  Customer Protection"
+                android:textColor="#141414"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="We assure 100% safety of your device."/>
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -68,63 +98,48 @@
             android:layout_margin="16dp"
             android:background="#d4d1d1"/>
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/linear"
-            android:layout_below="@id/line1"
+            android:gravity="left"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp">
+            android:text="What we offer"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:gravity="right|left"
+            android:lineSpacingExtra="7dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="40dp"
+            android:text="\u25ba Visiting charge: ₹100\n\u25ba First 1 hour: ₹250\n\u25ba Second 1 hour: ₹150\n\u25ba There after each half hour: ₹50"
+            android:textSize="13sp"/>
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="  Our Promise"
-                android:textColor="#141414"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:drawableLeft="@drawable/ic_verified_user_black_24dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="40dp"
-                android:text="We use most sophisticated equipments and highly trained staffs."/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#141414"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_thumb_up_black_24dp"
-                android:text="  Service guaranteed"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="40dp"
-                android:text="We provide most accurate result in promised time."/>
-
-
-        </LinearLayout>
 
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Book Service"
             android:layout_marginBottom="10dp"
-            android:background="#141414"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:textColor="#fff"
+            android:background="#141414"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="bookservice"
             android:foreground="@drawable/ripple_custom"
+            android:onClick="bookservice"
+            android:text="Book Service"
+            android:textColor="#fff"
             />
     </LinearLayout>
 

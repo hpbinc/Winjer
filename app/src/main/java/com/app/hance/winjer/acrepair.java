@@ -20,7 +20,7 @@ public class acrepair extends AppCompatActivity {
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this,"Roboto.ttf",true);
 
-        TextView text=(TextView)findViewById(R.id.about);
+        TextView text= findViewById(R.id.about);
         text.setText(splash.info.getAcinfo());
 
     }
@@ -28,6 +28,7 @@ public class acrepair extends AppCompatActivity {
     public void bookservice(View v)
     {
         Intent i = new Intent(this,location_schedule.class);
+        i.putExtra("type","acservice");
         startActivity(i);
     }
 }

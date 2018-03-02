@@ -13,7 +13,8 @@ public class sofa extends AppCompatActivity implements View.OnClickListener {
 
     Button seat1,seat2;
     TextView seats,price;
-    int seatno=3,cost=100;
+    int seatno=3;
+    float cost=100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +26,11 @@ public class sofa extends AppCompatActivity implements View.OnClickListener {
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this,"Roboto.ttf",true);
 
-        seats = (TextView)findViewById(R.id.seats);
-        price = (TextView)findViewById(R.id.price);
+        seats = findViewById(R.id.seats);
+        price = findViewById(R.id.price);
 
-        seat1= (Button)findViewById(R.id.seat1);
-        seat2= (Button)findViewById(R.id.seat2);
+        seat1= findViewById(R.id.seat1);
+        seat2= findViewById(R.id.seat2);
 
         seat1.setOnClickListener(this);
         seat2.setOnClickListener(this);
@@ -41,6 +42,8 @@ public class sofa extends AppCompatActivity implements View.OnClickListener {
     public void onOrderClicked(View v)
     {
         Intent i = new Intent(this,location_schedule.class);
+        i.putExtra("type","afterparty");
+        i.putExtra("seatno",seatno);
         startActivity(i);
     }
 

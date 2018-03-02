@@ -34,18 +34,21 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class splash extends AppCompatActivity implements Animation.AnimationListener {
 
+    public static data info;
+    String url="http://tnpmace.com/testingAPI/Booking/listDescriptionOnly";
+    RequestQueue requestQueue;
     private ImageView mFbLogoImageView;
     private TextView textView,mimos;
     private Button mNewAccountButton;
     private ImageView mFbLogoStaticImageView;
-
     private Boolean ANIMATION_ENDED = false;
     private Boolean START_ANIMATION = true;
     private Boolean response_recieved=false;
 
-    public static data info;
-    String url="http://tnpmace.com/testingAPI/Booking/listDescriptionOnly";
-    RequestQueue requestQueue;
+    public static float dpToPx(Context context, float valueInDp) {
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, valueInDp, metrics);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +87,7 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
                                     Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
 
                                 }
-                                if(type.equals("TV"))
+                                if(type.equals("tv_repair"))
                                 {
 
                                     info.setTvrepair_info(""+jsonObject.get("type_description"));
@@ -129,6 +132,24 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
 
                                 }
                                 if(type.equals("painting"))
+                                {
+
+                                    info.setPainting_info(""+jsonObject.get("type_description"));
+
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+                                if(type.equals("painting"))
+                                {
+
+                                    info.setPainting_info(""+jsonObject.get("type_description"));
+
+
+                                    Log.e("\n\n\nResponse", ""+jsonObject.get("type_description"));
+
+                                }
+                                if(type.equals("tailoring"))
                                 {
 
                                     info.setPainting_info(""+jsonObject.get("type_description"));
@@ -314,11 +335,6 @@ public class splash extends AppCompatActivity implements Animation.AnimationList
     @Override
     public void onAnimationRepeat(Animation animation) {
 
-    }
-
-    public static float dpToPx(Context context, float valueInDp) {
-        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, valueInDp, metrics);
     }
 
     @Override

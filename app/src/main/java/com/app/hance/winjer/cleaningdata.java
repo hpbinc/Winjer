@@ -28,11 +28,11 @@ public class cleaningdata {
     }
 
 
-   public void setService_type(String type)
-   {
-       this.service_type=type;
+    public void setService_type(String type)
+    {
+        this.service_type=type;
 
-   }
+    }
 
     public void setHome_type(String type)
     {
@@ -40,25 +40,25 @@ public class cleaningdata {
 
     }
 
-     public void setbhk(int bhk,float price,float discount)
-     {
+    public void setbhk(int bhk,float price,float discount)
+    {
 
-         cleaning_baseprice[bhk]=price;
-         cleaning_discount[bhk]=discount;
-
-
-     }
+        cleaning_baseprice[bhk]=price;
+        cleaning_discount[bhk]=discount;
 
 
-     public float getpricebhk(int bhk)
-     {
+    }
 
-         return cleaning_baseprice[bhk];
-     }
+
+    public float getpricebhk(int bhk)
+    {
+
+        return cleaning_baseprice[bhk];
+    }
 
     public float getdiscountbhk(int bhk)
     {
-          return cleaning_discount[bhk];
+        return cleaning_discount[bhk];
 
     }
 

@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,23 +21,23 @@
             android:weightSum="2">
 
             <Button
+                android:id="@+id/date1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HOUSE"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/buttonstyle2"
-                android:layout_marginRight="10dp"
-                android:id="@+id/date1"/>
+                android:text="HOUSE"/>
 
 
             <Button
+                android:id="@+id/date2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="APARTMENT"
-                android:background="@drawable/buttonstyle2"
                 android:layout_marginLeft="10dp"
-                android:id="@+id/date2"/>
+                android:layout_weight="1"
+                android:background="@drawable/buttonstyle2"
+                android:text="APARTMENT"/>
 
 
         </LinearLayout>
@@ -46,22 +46,22 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#E0E0E0"
-            android:layout_margin="16dp"/>
+            android:layout_margin="16dp"
+            android:background="#E0E0E0"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Please select the size of your home:"
-            android:textSize="20sp"
             android:gravity="center"
-            android:textColor="#141414"/>
+            android:text="Please select the size of your house:"
+            android:textColor="#141414"
+            android:textSize="20sp"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#E0E0E0"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:background="#E0E0E0"/>
 
 
         <worker8.com.github.radiogroupplus.RadioGroupPlus
@@ -79,9 +79,9 @@
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/home"
                     android:scaleX=".8"
-                    android:scaleY=".8" />
+                    android:scaleY=".8"
+                    android:src="@drawable/home" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -89,8 +89,8 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/iv_mocha"
                     android:paddingLeft="20dp"
-                    android:textSize="20sp"
-                    android:text="1 BHK House  - ₹3000" />
+                    android:text="1 BHK House  - ₹3000"
+                    android:textSize="20sp" />
 
                 <RadioButton
                     android:id="@+id/rb_1bhk"
@@ -114,9 +114,9 @@
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/home"
                     android:scaleX=".8"
-                    android:scaleY=".8"/>
+                    android:scaleY=".8"
+                    android:src="@drawable/home"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -124,8 +124,8 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/iv_americano"
                     android:paddingLeft="20dp"
-                    android:textSize="20sp"
-                    android:text="2 BHK House  - ₹3500" />
+                    android:text="2 BHK House  - ₹3500"
+                    android:textSize="20sp" />
 
                 <RadioButton
                     android:id="@+id/rb_2bhk"
@@ -149,9 +149,9 @@
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/home"
                     android:scaleX=".8"
-                    android:scaleY=".8" />
+                    android:scaleY=".8"
+                    android:src="@drawable/home" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -159,8 +159,8 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/iv_espresso"
                     android:paddingLeft="20dp"
-                    android:textSize="20sp"
-                    android:text="3 BHK House  - ₹4500" />
+                    android:text="3 BHK House  - ₹4500"
+                    android:textSize="20sp" />
 
                 <RadioButton
                     android:id="@+id/rb_3bhk"
@@ -185,9 +185,9 @@
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/home"
                     android:scaleX=".8"
-                    android:scaleY=".8"/>
+                    android:scaleY=".8"
+                    android:src="@drawable/home"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -195,8 +195,8 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/iv_orange"
                     android:paddingLeft="20dp"
-                    android:textSize="20sp"
-                    android:text="4 BHK House  - ₹6000" />
+                    android:text="4 BHK House  - ₹6000"
+                    android:textSize="20sp" />
 
                 <RadioButton
                     android:id="@+id/rb_4bhk"

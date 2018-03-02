@@ -10,18 +10,13 @@
     <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Confirm Booking"
-    android:gravity="left"
-    android:textSize="20sp"
-    android:textColor="#000"
-    android:paddingLeft="10dp"
     android:layout_marginTop="10dp"
+    android:gravity="left"
+    android:paddingLeft="16dp"
+    android:text="Confirm Booking"
+    android:textColor="#000"
+    android:textSize="20sp"
         android:textStyle="bold"/>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,14 +31,19 @@
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="House Name:"
+            android:text="House Name"
             android:textColor="#212121"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text=" :  "/>
+        <TextView
             android:id="@+id/house"
-            android:textSize="20sp"
-            android:textColor="#212121"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#212121"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 
@@ -55,14 +55,20 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:textColor="#212121"
-                android:text="Locality:"/>
+                android:text="Locality"
+                android:textColor="#212121"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:text=" :  "/>
+
+            <TextView
+                android:id="@+id/locality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="#212121"
-                android:id="@+id/locality"/>
+                android:textSize="20sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -73,14 +79,20 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:textColor="#212121"
-                android:text="Pin:"/>
+                android:text="Pin"
+                android:textColor="#212121"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:text=" :  "/>
+
+            <TextView
+                android:id="@+id/pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="#212121"
-                android:id="@+id/pin"/>
+                android:textSize="20sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -91,14 +103,19 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:textColor="#212121"
-                android:text="Mobile:"/>
+                android:text="Mobile"
+                android:textColor="#212121"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:text=" :  "/>
+
+            <TextView
+                android:id="@+id/mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="#212121"
-                android:id="@+id/mobile"/>
+                android:textSize="20sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -109,14 +126,19 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:textColor="#212121"
-                android:text="Booked item:"/>
+                android:text="Booked item"
+                android:textColor="#212121"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:text=" :  "/>
+
+            <TextView
+                android:id="@+id/item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="#212121"
-                android:id="@+id/item"/>
+                android:textSize="20sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -126,29 +148,39 @@
 
             <TextView
                 android:layout_width="80dp"
-                android:textColor="#212121"
                 android:layout_height="wrap_content"
-                android:text="Type:"/>
+                android:text="Type"
+                android:textColor="#212121"/>
+
             <TextView
                 android:layout_width="wrap_content"
-                android:textSize="20sp"
-                android:textColor="#212121"
                 android:layout_height="wrap_content"
-                android:id="@+id/type"/>
+                android:text=" :  "/>
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#212121"
+                android:textSize="20sp"/>
         </LinearLayout>
 
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="confirm"
+        android:text="Confirm"/>
 
     <in.shadowfax.proswipebutton.ProSwipeButton
         android:id="@+id/confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:text_size="12dp"
         app:bg_color="#141414"
-        app:btn_text="Swipe to Confirm" />
+        app:btn_text="Swipe to Confirm"
+        app:text_size="12dp" />
 
 </LinearLayout>

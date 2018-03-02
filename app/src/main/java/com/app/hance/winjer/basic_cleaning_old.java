@@ -9,17 +9,28 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import me.anwarshahriar.calligrapher.Calligrapher;
 import worker8.com.github.radiogroupplus.RadioGroupPlus;
 
 public class basic_cleaning_old extends AppCompatActivity implements View.OnClickListener {
 
+
     RadioGroupPlus mRadioGroupPlus;
-
-    private int[] btn_id = {R.id.date1, R.id.date2};
-
+    String hometype="home";
+    cleaningdata apartcleaningdata,homecleaningdata;
     Button date[];
-
+    private int[] btn_id = {R.id.date1, R.id.date2};
     private Button btn_unfocus;
 
     private void setFocus(Button btn_unfocus, Button btn_focus){
@@ -37,10 +48,12 @@ public class basic_cleaning_old extends AppCompatActivity implements View.OnClic
         switch (v.getId()){
             case R.id.date1 :
                 setFocus(btn_unfocus, date[0]);
+                hometype="home";
                 break;
 
             case R.id.date2 :
                 setFocus(btn_unfocus, date[1]);
+                hometype="appartments";
                 break;
         }
     }
@@ -85,15 +98,29 @@ public class basic_cleaning_old extends AppCompatActivity implements View.OnClic
         if (R.id.rb_1bhk == mRadioGroupPlus.getCheckedRadioButtonId()) {
             //Toast.makeText(basic_cleaning_old.this, "Latte", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(basic_cleaning_old.this,basic_cleaning.class);
+            i.putExtra("bhk","1");
+            i.putExtra("hometype",hometype);
             startActivity(i);
         } else if (R.id.rb_2bhk == mRadioGroupPlus.getCheckedRadioButtonId()) {
-            //Toast.makeText(basic_cleaning_old.this, "Mocha", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(basic_cleaning_old.this,basic_cleaning.class);
+            i.putExtra("bhk","2");
+            i.putExtra("hometype",hometype);
+            startActivity(i);
         } else if (R.id.rb_3bhk == mRadioGroupPlus.getCheckedRadioButtonId()) {
-            //Toast.makeText(basic_cleaning_old.this, "Americano", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(basic_cleaning_old.this,basic_cleaning.class);
+            i.putExtra("bhk","3");
+            i.putExtra("hometype",hometype);
+            startActivity(i);
         } else if (R.id.rb_4bhk == mRadioGroupPlus.getCheckedRadioButtonId()) {
-            //Toast.makeText(basic_cleaning_old.this, "Espresso", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(basic_cleaning_old.this,basic_cleaning.class);
+            i.putExtra("bhk","4");
+            i.putExtra("hometype",hometype);
+            startActivity(i);
         }  else {
-            //Toast.makeText(basic_cleaning_old.this, "No Drinks :(", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(basic_cleaning_old.this,basic_cleaning.class);
+            i.putExtra("bhk","5");
+            i.putExtra("hometype",hometype);
+            startActivity(i);
         }
     }
 }

@@ -25,27 +25,6 @@ public class washing_ironing_adapter extends RecyclerView.Adapter<washing_ironin
 
     private List<washing_ironing_data> mydata;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView text, price,count;
-
-
-        public MyViewHolder(View view) {
-            super(view);
-            text = view.findViewById(R.id.text);
-            count = view.findViewById(R.id.count);
-            price = view.findViewById(R.id.price);
-
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
-                    int position = getAdapterPosition();
-
-
-                }
-            });
-        }
-    }
-
-
     public washing_ironing_adapter(Context mContext, List<washing_ironing_data> mydata) {
         this.mContext = mContext;
         this.mydata = mydata;
@@ -65,15 +44,34 @@ public class washing_ironing_adapter extends RecyclerView.Adapter<washing_ironin
         holder.text.setText(mydata.get(position).name);
         holder.price.setText("₹ "+mydata.get(position).price);
         holder.count.setText(""+mydata.get(position).count);
-       Log.e("hashim","view Added");
+        Log.e("hashim","view Added");
         // loading album cover using Glide library
-       // Glide.with(mContext).load(album.getThumbnail()).into(holder.thumbnail);
+        // Glide.with(mContext).load(album.getThumbnail()).into(holder.thumbnail);
 
     }
-
 
     @Override
     public int getItemCount() {
         return mydata.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView text, price,count;
+
+
+        public MyViewHolder(View view) {
+            super(view);
+            text = view.findViewById(R.id.text);
+            count = view.findViewById(R.id.count);
+            price = view.findViewById(R.id.price);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    int position = getAdapterPosition();
+
+
+                }
+            });
+        }
     }
 }

@@ -100,8 +100,13 @@ public class cakeadapter extends RecyclerView.Adapter<cakeadapter.MyViewHolder> 
                 @Override public void onClick(View v) {
                     int position = getAdapterPosition();
                     Log.e("hance",":::" + position);
-                    Snackbar.make(v, "Click detected on item " + position, Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                    Intent intent = new Intent (v.getContext(), cake.class);
+                    String name = albumList.get(position).getImageTitle();
+                    String description = albumList.get(position).getDescription();
+
+                    //Snackbar.make(v, "Click detected on item " + position, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    Intent intent = new Intent (v.getContext(), dialogbox.class);
+                    intent.putExtra("title",name);
+                    intent.putExtra("description",description);
                     v.getContext().startActivity(intent);
                    /* Intent intent = new Intent (v.getContext(), house_cleaning.class);
                     intent.putExtra("titles", titles[position]);

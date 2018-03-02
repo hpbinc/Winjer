@@ -32,8 +32,7 @@
         </activity>
         <activity
             android:name=".realfirst"
-            android:label="Winjer"
-             />
+            android:label="Winjer" />
         <activity
             android:name=".basic_cleaning_old"
             android:parentActivityName=".realfirst"
@@ -132,8 +131,7 @@
         <activity
             android:name=".cake"
             android:label="Cake"
-            android:parentActivityName=".realfirst"
-        />
+            android:parentActivityName=".realfirst" />
         <activity
             android:name=".carpet"
             android:label="Carpet Cleaning"
@@ -144,8 +142,15 @@
             android:label="Deep Cleaning"
             android:parentActivityName=".realfirst"
             android:theme="@style/AppThemeBar" />
-        <activity android:name=".commercial" />
-        <activity android:name=".housekeeping" />
+        <activity android:name=".commercial"
+            android:label="Commercial"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar"/>
+        <activity
+            android:name=".housekeeping"
+            android:label="House Keeping Service"
+            android:parentActivityName=".realfirst"
+            android:theme="@style/AppThemeBar" />
         <activity
             android:name=".deep_cleaningselect"
             android:label="Deep Cleaning"
@@ -156,6 +161,8 @@
             android:label="Photography"
             android:parentActivityName=".realfirst"
             android:theme="@style/AppThemeBar" />
+        <activity android:name=".dialogbox"
+            android:theme="@style/MyAlertDialogStyle"/>
     </application>
 
 </manifest>
