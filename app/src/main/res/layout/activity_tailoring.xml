@@ -1,146 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:scrollbars="none">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="#000"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+
+                >
+                <ImageView
+                    android:id="@+id/expandedImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/commercialback"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.7" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="#7a000000"
+
+                >
+
+
+                <ImageView
+                    android:layout_width="65dp"
+    android:layout_height="65dp"
+    android:layout_centerInParent="true"
+    android:background="@drawable/tailoring"
+                    android:backgroundTint="#c5ffffff"
+    android:foregroundGravity="center"
+    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+
+
+                >
+
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="#c5000000"
+
+                    android:foregroundGravity="center"
+                    />
+
+
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!---    content      -->
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
-        <RelativeLayout
-            android:id="@+id/relative"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/tailoringback"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:paddingBottom="5dp"
-                android:paddingLeft="10dp"
-                android:text="TAILORING"
-                android:textColor="#fff"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                />
-
-        </RelativeLayout>
+        >
 
         <LinearLayout
-            android:id="@+id/linear"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/line1"
-            android:orientation="vertical"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="16dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_verified_user_black_24dp"
-                android:text="  Our Promise"
-                android:textColor="#141414"
-                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:text="Description"
+                android:textColor="#000"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="40dp"
-                android:text="We provide highly trained professional staffs."/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_thumb_up_black_24dp"
-                android:text="  Service guaranteed"
-                android:textColor="#141414"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="40dp"
-                android:text="Up to 15 days."/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_filter_vintage_black_24dp"
-                android:text="  Customer Protection"
-                android:textColor="#141414"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:lineSpacingExtra="7dp"
+                android:paddingLeft="20dp"
+                android:text="\u25BA Roofing is a craft that takes time and balance.\n\u25BA Roofers must be able to align the shingles or other materials.\n\u25BA Roofers may need to inspect damage on roofs.\n\u25BA Other roofs may need to be covered in tar and gravel to protect it from the elements."/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="16dp"
+                android:background="#d4d1d1"/>
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_verified_user_black_24dp"
+                    android:text="  Our Promise"
+                    android:textColor="#141414"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:text="We provide highly trained professional staffs."/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_thumb_up_black_24dp"
+                    android:text="  Service guaranteed"
+                    android:textColor="#141414"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:text="100% service guaranteed."/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_filter_vintage_black_24dp"
+                    android:text="  Quality cleaning agents"
+                    android:textColor="#141414"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:text="Eco-friendly cleaning agents."/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="16dp"
+                android:background="#d4d1d1"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <TextView
+                    android:id="@+id/pricehead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pricehead"
+                    android:layout_marginTop="10dp"
+                    android:text="Special Price"
+                    android:textColor="#05b722"
+                    android:textSize="15sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/pricehead"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="bottom"
+
+                    android:text="₹ 1000"
+                    android:textColor="#05b722"
+                    android:textSize="25sp"
+
+
+                    />
+                <TextView
+                    android:id="@+id/oldprice"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/price"
+                    android:gravity="bottom"
+                    android:text="( ₹2000 50 % Discount )"
+                    android:textColor="#838282"
+                    android:textSize="10sp"
+                    />
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="16dp"
+                android:background="#d4d1d1"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="40dp"
-                android:text="We assure 100% safety of your device."/>
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:text="Select the area"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="14dp"
+                app:ms_background_color="#141414"
+                app:ms_text_color="#fff"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#141414"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_custom"
+                android:onClick="bookservice"
+                android:text="Book Service"
+                android:textColor="#fff"
+                />
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="16dp"
-            android:background="#d4d1d1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:paddingLeft="16dp"
-            android:text="What we offer"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/about"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|right"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
-            android:gravity="right|left"
-            android:lineSpacingExtra="7dp"
-            android:paddingBottom="16dp"
-            android:paddingLeft="40dp"
-            android:text="\u25ba Visiting charge: ₹100\n\u25ba First 1 hour: ₹250\n\u25ba Second 1 hour: ₹150\n\u25ba There after each half hour: ₹50"
-            android:textSize="13sp"/>
+    </android.support.v4.widget.NestedScrollView>
 
 
 
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="#141414"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="@drawable/ripple_custom"
-            android:onClick="bookservice"
-            android:text="Book Service"
-            android:textColor="#fff"
-            />
-    </LinearLayout>
-
-</ScrollView>
+</android.support.design.widget.CoordinatorLayout>

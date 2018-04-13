@@ -1,0 +1,23 @@
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"/>
+
+    <Button android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_transparent"
+        android:gravity="center_vertical|center_horizontal" android:onClick="close"
+        android:text="X" android:textColor="#000" android:textSize="18sp"
+        android:textStyle="bold" />
+</RelativeLayout>

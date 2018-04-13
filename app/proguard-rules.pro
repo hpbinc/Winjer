@@ -23,3 +23,23 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
+-keepattributes JavascriptInterface
+-keepattributes *Annotation*
+
+-dontwarn com.razorpay.**
+-keep class com.razorpay.** {*;}
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+-dontwarn android.support.v7.**
+-keep class android.support.v7.** { *; }
+-keep interface android.support.v7.** { *; }
+-optimizations !method/inlining/*
+
+-keepclasseswithmembers class * {
+  public void onPayment*(...);
+}

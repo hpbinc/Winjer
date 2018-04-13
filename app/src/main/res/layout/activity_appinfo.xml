@@ -8,49 +8,49 @@
 
 
     <android.support.constraint.Guideline
+        android:id="@+id/v_guideline1"
         android:layout_width="wrap_content"
         android:layout_height="567dp"
-        android:id="@+id/v_guideline1"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1015625"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="39dp"/>
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="0dp"/>
 
     <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="567dp"
         android:id="@+id/v_guideline2"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="349dp"
-        app:layout_constraintGuide_percent="0.9088542"/>
-
-    <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="567dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9088542"
+        tools:layout_editor_absoluteX="349dp"
+        tools:layout_editor_absoluteY="0dp"/>
+
+    <android.support.constraint.Guideline
         android:id="@+id/v_guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="567dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.98" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/h_guideline1"
         android:layout_width="384dp"
         android:layout_height="0dp"
-        android:id="@+id/h_guideline1"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.32"/>
 
     <android.support.constraint.Guideline
+        android:id="@+id/h_guideline2"
         android:layout_width="384dp"
         android:layout_height="wrap_content"
-        android:id="@+id/h_guideline2"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5"/>
 
 
     <android.support.constraint.Guideline
+        android:id="@+id/h_guideline3"
         android:layout_width="384dp"
         android:layout_height="wrap_content"
-        android:id="@+id/h_guideline3"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.81"/>
 
@@ -60,11 +60,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:gravity="center"
         android:text="Winjer"
         android:textColor="#282828"
-        android:gravity="center"
-        android:textStyle="bold"
         android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
         app:layout_constraintTop_toBottomOf="@+id/h_guideline1" />
@@ -74,25 +74,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:gravity="center"
+
         android:text="Version:1.0 "
         android:textColor="#282828"
-        android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
         app:layout_constraintTop_toBottomOf="@+id/mimosapp" />
 
     <ImageView
+        android:id="@+id/imageview"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        app:srcCompat="@mipmap/winjer_small11"
         android:layout_marginTop="10dp"
-        tools:layout_editor_absoluteY="90dp"
-        tools:layout_editor_absoluteX="164dp"
-        android:id="@+id/imageview"
         app:layout_constraintLeft_toRightOf="@+id/v_guideline1"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/version"/>
+        app:layout_constraintTop_toBottomOf="@+id/version"
+        app:srcCompat="@mipmap/ic_winjer_white"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="90dp"/>
 
 
 
@@ -101,9 +102,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:text="© 2018-2019 Winjer Group."
         android:textColor="#282828"
-        android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
@@ -114,9 +115,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:gravity="center"
         android:text="All rights reserved"
         android:textColor="#282828"
-        android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
         app:layout_constraintRight_toLeftOf="@+id/v_guideline2"

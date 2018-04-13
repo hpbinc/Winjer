@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.app.hance.winjer.place_order">
+    tools:context="com.winjer.app.place_order">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        />
+
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.winjer.app.place_order">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
 
     <TextView
     android:layout_width="match_parent"
@@ -31,69 +59,25 @@
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="House Name"
-            android:textColor="#212121"/>
+            android:text="Address"
+            android:textColor="#212121"
+            android:textSize="14sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" :  "/>
+            android:text=" :  "
+            android:textSize="14sp"/>
+
         <TextView
             android:id="@+id/house"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="3dp"
             android:textColor="#212121"
-            android:textSize="20sp"/>
+            android:textSize="14sp"
+           />
     </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="Locality"
-                android:textColor="#212121"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" :  "/>
-
-            <TextView
-                android:id="@+id/locality"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#212121"
-                android:textSize="20sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="Pin"
-                android:textColor="#212121"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" :  "/>
-
-            <TextView
-                android:id="@+id/pin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#212121"
-                android:textSize="20sp"/>
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -104,18 +88,21 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="Mobile"
-                android:textColor="#212121"/>
+                android:textColor="#212121"
+                android:textSize="14sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" :  "/>
+                android:text=" :  "
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/mobile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#212121"
-                android:textSize="20sp"/>
+                android:textSize="14sp"
+              />
         </LinearLayout>
 
         <LinearLayout
@@ -127,18 +114,21 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="Booked item"
-                android:textColor="#212121"/>
+                android:textColor="#212121"
+                android:textSize="14sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" :  "/>
+                android:text=" :  "
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#212121"
-                android:textSize="20sp"/>
+                android:textSize="14sp"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -149,38 +139,89 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="Type"
-                android:textColor="#212121"/>
+                android:text="Cost"
+                android:textColor="#212121"
+                android:textSize="14sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" :  "/>
+                android:text=" :  "
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#212121"
-                android:textSize="20sp"/>
+                android:textColor="#ff0000"
+                android:textSize="14sp"
+               />
         </LinearLayout>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/paylinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnPayNow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_transparent"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_custom"
+                android:text="Pay now"
+                android:textColor="#141414"
+                />
+
+            <Button
+                android:id="@+id/btnCod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_transparent"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_custom"
+                android:text="Cash on delivery"
+                android:textColor="#141414"
+                />
+
+        </LinearLayout>
 
     <Button
+        android:id="@+id/paybutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#141414"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="@drawable/ripple_custom"
         android:onClick="confirm"
-        android:text="Confirm"/>
+        android:text="Confirm Booking"
+        android:textColor="#fff"
+        />
 
-    <in.shadowfax.proswipebutton.ProSwipeButton
-        android:id="@+id/confirm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:bg_color="#141414"
-        app:btn_text="Swipe to Confirm"
-        app:text_size="12dp" />
 
-</LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>
+    </RelativeLayout>

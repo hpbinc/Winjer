@@ -1,8 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
 <android.support.v4.widget.NestedScrollView
     android:layout_width="match_parent"
@@ -13,70 +13,182 @@
             android:layout_height="match_parent">
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recycler_view"
+                    android:id="@+id/recycler_view0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clipToPadding="false"
                     android:scrollbars="none" />
 
                 <View
+                    android:id="@+id/view0"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_margin="16dp"
-                    android:background="#d4d1d1"
+                    android:layout_below="@id/recycler_view0"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#d4d1d1"/>
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view0"
+                    android:clipToPadding="false"
+                    android:scrollbars="none" />
+
+                <View
                     android:id="@+id/view1"
-                    android:layout_below="@id/recycler_view"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/recycler_view"
+                    android:layout_margin="16dp"
+                    android:background="#d4d1d1"/>
 
 
                 <TextView
-                    android:text="Hot offers"
-                    android:textSize="20sp"
-                    android:layout_below="@id/view1"
                     android:id="@+id/hotoffers"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/view1"
+                    android:fontFamily="sans-serif"
                     android:gravity="left"
-                    android:textColor="#000"
                     android:paddingLeft="10dp"
+                    android:text="HOT OFFERS"
+                    android:textColor="#000"
+                    android:textSize="16sp"
                     android:textStyle="bold"/>
 
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view2"
-                    android:layout_below="@id/hotoffers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/hotoffers"
                     android:clipToPadding="false"
                     android:scrollbars="none" />
 
                 <View
+                    android:id="@+id/view2"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@id/recycler_view2"
                     android:layout_margin="16dp"
-                    android:background="#d4d1d1"
-                    android:id="@+id/view2"
-                    android:layout_below="@id/recycler_view2"/>
+                    android:background="#d4d1d1"/>
 
 
                 <TextView
-                    android:text="Home Cleaning"
-                    android:textSize="20sp"
-                    android:layout_below="@id/view2"
                     android:id="@+id/homecleaning"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/view2"
+                    android:fontFamily="sans-serif"
                     android:gravity="left"
-                    android:textColor="#000"
                     android:paddingLeft="10dp"
+                    android:text="CLEANING"
+                    android:textColor="#000"
+                    android:textSize="16sp"
                     android:textStyle="bold"/>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view3"
-                    android:layout_below="@id/homecleaning"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/homecleaning"
                     android:clipToPadding="false"
                     android:scrollbars="none" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/recycler_view3"
+                    android:layout_margin="16dp"
+                    android:background="#d4d1d1"/>
+
+                <TextView
+                    android:id="@+id/repairs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view3"
+                    android:fontFamily="sans-serif"
+                    android:gravity="left"
+                    android:paddingLeft="10dp"
+                    android:text="REPAIRS"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/repairs"
+                    android:clipToPadding="false"
+                    android:scrollbars="none" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/recycler_view4"
+                    android:layout_margin="16dp"
+                    android:background="#d4d1d1"/>
+
+
+                <TextView
+                    android:id="@+id/cake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view4"
+                    android:fontFamily="sans-serif"
+                    android:gravity="left"
+                    android:paddingLeft="10dp"
+                    android:text="CAKES"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cake"
+                    android:clipToPadding="false"
+                    android:scrollbars="none" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/recycler_view5"
+                    android:layout_margin="16dp"
+                    android:background="#d4d1d1"/>
+
+
+                <TextView
+                    android:id="@+id/products"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view5"
+                    android:fontFamily="sans-serif"
+                    android:gravity="left"
+                    android:paddingLeft="10dp"
+                    android:text="PRODUCTS"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/products"
+                    android:clipToPadding="false"
+                    android:scrollbars="none" />
+
 
         </RelativeLayout>
 

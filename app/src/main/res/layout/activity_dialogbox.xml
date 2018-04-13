@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/cakeimage"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:onClick="largeimage"
+        android:scaleType="fitXY"/>
 
     <TextView
 
         android:id="@+id/cakename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
         android:gravity="center"
         android:text="Vanilla cake"
         android:textColor="#141414"
@@ -38,6 +51,7 @@
         android:textColor="#141414"/>
 
     <Button
+        android:id="@+id/book"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#141414"
@@ -48,4 +62,8 @@
         android:text="Order Cake"
         android:textColor="#fff"
         />
-</LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

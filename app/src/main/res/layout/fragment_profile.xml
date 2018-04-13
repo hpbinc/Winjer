@@ -1,45 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:float="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:scrollbars="none">
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.hance.winjer.profile">
+    >
+<LinearLayout
+    android:id="@+id/failure"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:visibility="visible"
+    >
+
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="30dp"
+       android:gravity="center"
+       android:text="Profile Information not available please Sign in"
+       android:textSize="15dp"
+       />
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#000"
+        android:elevation="10dp"
+        android:focusable="true"
+        android:foreground="@drawable/ripple_custom"
+        android:onClick="login"
+
+        android:text="Sign in"
+        android:textColor="#fff"
+        />
+
+
+</LinearLayout>
+
 
 <LinearLayout
+    android:id="@+id/success"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:visibility="invisible">
+
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="5dp"
-        android:elevation="4dp"
-        app:cardCornerRadius="10dp">
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@drawable/coverprofile">
+            android:background="#282828">
+
 
             <ImageView
-                android:id="@+id/item_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/profileback"/>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/view2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_below="@id/image"
                 android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:elevation="4dp"
-                android:src="@drawable/nav_banner"
-                />
+                android:layout_marginTop="-50dp"
+                android:elevation="30dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardCornerRadius="60dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_person_black_24dp">
+                </ImageView>
+
+            </android.support.v7.widget.CardView>
+
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/item_image"
+                android:layout_below="@id/view2"
+                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="HANCE PAUL BENNY"
+                android:text=""
                 android:textColor="#fff"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -60,40 +133,46 @@
         android:orientation="vertical"
         android:paddingLeft="50dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#00eaff"
-            android:drawableLeft="@drawable/ic_email_black_24dp"
-            android:drawableTintMode="src_over"
-            android:text="  Email:  hancepbenny@gmail.com"
-            android:textColor="#141414"
-            android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00eaff"
+        android:drawableLeft="@drawable/ic_email_black_24dp"
+        android:drawableTintMode="src_over"
+        android:text=""
+        android:textColor="#141414"
+        android:textSize="16sp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#00eaff"
-            android:drawableLeft="@drawable/ic_phone_iphone_black_24dp"
-            android:drawableTintMode="src_over"
-            android:text="  Mobile:  +91 8606099181"
-            android:textColor="#141414"
-            android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#00eaff"
+        android:drawableLeft="@drawable/ic_phone_iphone_black_24dp"
+        android:drawableTintMode="src_over"
+        android:text=""
+        android:textColor="#141414"
+        android:textSize="16sp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#00eaff"
-            android:drawableLeft="@drawable/ic_my_location_black_24dp"
-            android:drawableTintMode="src_over"
-            android:text="  Location:  Kothamangalam"
-            android:textColor="#141414"
-            android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#00eaff"
+        android:clickable="true"
+        android:drawableLeft="@drawable/ic_exit_to_app_black_24px"
+        android:drawableTintMode="src_over"
+        android:text=" Logout"
+        android:textColor="#141414"
+        android:textSize="16sp"/>
 
     </LinearLayout>
 
 </LinearLayout>
 
 </FrameLayout>
+
+</ScrollView>

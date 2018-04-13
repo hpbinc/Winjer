@@ -17,22 +17,27 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/background"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/tailoringback"/>
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:elevation="20dp"
                 android:paddingBottom="5dp"
                 android:paddingLeft="10dp"
+                android:shadowColor="#e85c5b5b"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="10"
                 android:text="COMMERCIAL"
                 android:textColor="#fff"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold"/>
 
         </RelativeLayout>
 
@@ -120,7 +125,7 @@
             android:gravity="right|left"
             android:lineSpacingExtra="7dp"
             android:paddingLeft="40dp"
-            android:text="\u2022 Single disk scraber\n\u2022 High pressure jet\n\u2022 Floor cleaning machine\n\u2022 Steam cleaner\n\u2022 Vacuum cleaners\n\u2022 Blowers\n\u2022 Branded Chemicals \n\u2022 Glass cleaners"
+            android:text=""
             android:textSize="13sp"/>
 
         <View
@@ -170,10 +175,53 @@
                 android:textColor="#ff5900"
                 android:textSize="15sp"/>
 
-
         </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#d4d1d1"/>
 
+
+            <TextView
+                android:id="@+id/sizehead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Enter area"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="sans"
+                />
+
+            <LinearLayout
+                android:id="@+id/hall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sizehead"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/sqft"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_transparent"
+                    android:gravity="center"
+                    android:hint="Enter value in sq.ft"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:typeface="sans"/>
+
+
+            </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
@@ -181,6 +229,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
             android:background="#141414"
             android:clickable="true"
             android:focusable="true"

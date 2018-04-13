@@ -17,17 +17,23 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/background"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/roofback"/>
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:elevation="20dp"
                 android:paddingBottom="5dp"
                 android:paddingLeft="10dp"
+                android:shadowColor="#e85c5b5b"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="10"
                 android:text="ROOF WORK"
                 android:textColor="#fff"
                 android:textSize="25sp"
@@ -36,30 +42,6 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="left"
-            android:paddingLeft="10dp"
-            android:text="Description"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:lineSpacingExtra="7dp"
-            android:paddingLeft="20dp"
-            android:text="\u25BA Roofing is a craft that takes time and balance.\n\u25BA Roofers must be able to align the shingles or other materials.\n\u25BA Roofers may need to inspect damage on roofs.\n\u25BA Other roofs may need to be covered in tar and gravel to protect it from the elements."/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="16dp"
-            android:background="#d4d1d1"/>
 
         <LinearLayout
             android:id="@+id/linear"
@@ -67,8 +49,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-
+            android:paddingRight="16dp"
+            android:paddingTop="16dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -83,21 +65,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="40dp"
                 android:text="We provide highly trained professional staffs."/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_thumb_up_black_24dp"
-                android:text="  Service guaranteed"
-                android:textColor="#141414"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="40dp"
-                android:text="100% service guaranteed."/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -115,11 +83,47 @@
                 android:text="Eco-friendly cleaning agents."/>
         </LinearLayout>
 
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="16dp"
             android:background="#d4d1d1"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:text="Enter the area"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/sqft"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/button_transparent"
+            android:gravity="center"
+            android:hint="Enter value in sq.ft"
+            android:inputType="number"
+            android:padding="10dp"
+            android:typeface="sans"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:background="#d4d1d1"/>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -130,7 +134,7 @@
                 android:id="@+id/pricehead"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Price"
+                android:text="Price per Square Feet"
                 android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -141,9 +145,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/pricehead"
                 android:layout_marginTop="10dp"
-                android:text="Special Price"
-                android:textColor="#05b722"
-                android:textSize="15sp"
+                android:text="(Price may vary based on material)"
+                android:textColor="#51544f"
+                android:textSize="12sp"
 
                 />
 
@@ -155,54 +159,12 @@
                 android:layout_below="@+id/pricehead"
                 android:layout_marginBottom="5dp"
                 android:gravity="bottom"
-                android:text="₹ 1000"
-                android:textColor="#05b722"
+                android:text=""
+                android:textColor="#ff5900"
                 android:textSize="25sp"
-
-
-                />
-            <TextView
-                android:id="@+id/oldprice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/price"
-                android:gravity="bottom"
-                android:text="( ₹2000 50 % Discount )"
-                android:textColor="#838282"
-                android:textSize="10sp"
                 />
 
         </RelativeLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="16dp"
-            android:background="#d4d1d1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:paddingLeft="10dp"
-            android:text="Select the area"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-
-        <com.jaredrummler.materialspinner.MaterialSpinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="14dp"
-            app:ms_background_color="#141414"
-            app:ms_text_color="#fff"/>
 
 
         <Button

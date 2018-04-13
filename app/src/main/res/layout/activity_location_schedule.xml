@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.app.hance.winjer.location_schedule"
+
     android:scrollbars="none">
 
     <RelativeLayout
@@ -15,112 +15,183 @@
 
 
         <TextView
+            android:id="@+id/schedule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Schedule Booking"
-            android:textStyle="bold"
-            android:gravity="left"
-            android:textSize="20dp"
             android:background="#141414"
-            android:textColor="#fff"
+            android:gravity="left"
             android:paddingLeft="10dp"
             android:paddingTop="20dp"
-            android:id="@+id/schedule"/>
+            android:text="Schedule Booking"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <HorizontalScrollView
+            android:id="@+id/horiview"
             android:layout_width="match_parent"
-            android:paddingTop="15dp"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
+            android:layout_below="@id/schedule"
+            android:layout_marginBottom="10dp"
             android:background="#141414"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/horiview"
-            android:layout_below="@id/schedule">
+            android:paddingTop="15dp"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="10dp"
                 android:paddingBottom="20dp"
-                android:layout_height="wrap_content">
+                android:paddingTop="10dp">
 
                 <Button
+                    android:id="@+id/date1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="JAN 15\nMON"
                     android:layout_marginLeft="7dp"
-                    android:textColor="#fff"
                     android:background="@drawable/button_transparent"
-                    android:id="@+id/date1"
                     android:focusable="true"
+                    android:text="JAN 15\nMON"
+                    android:textColor="#fff"
                     />
 
                 <Button
+                    android:id="@+id/date2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
                     android:text="JAN 16\nTUE"
                     android:textColor="#fff"
-                    android:layout_marginLeft="25dp"
-                    android:background="@drawable/button_transparent"
-                    android:id="@+id/date2"
-                    android:focusable="true"
                     />
 
                 <Button
+                    android:id="@+id/date3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
                     android:text="JAN 17\nWED"
                     android:textColor="#fff"
-                    android:layout_marginLeft="25dp"
-                    android:background="@drawable/button_transparent"
-                    android:id="@+id/date3"
-                    android:focusable="true"
                     />
 
                 <Button
+                    android:id="@+id/date4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
                     android:text="JAN 18\nTHU"
                     android:textColor="#fff"
-                    android:layout_marginLeft="16dp"
-                    android:background="@drawable/button_transparent"
-                    android:id="@+id/date4"
-                    android:focusable="true"
                     />
 
                 <Button
+                    android:id="@+id/date5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
                     android:text="JAN 19\nFRI"
                     android:textColor="#fff"
-                    android:layout_marginLeft="16dp"
-                    android:background="@drawable/button_transparent"
-                    android:id="@+id/date5"
-                    android:focusable="true"
                     />
 
                 <Button
+                    android:id="@+id/date6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
                     android:text="JAN 20\nSAT"
                     android:textColor="#fff"
-                    android:layout_marginLeft="16dp"
-                    android:background="@drawable/button_transparent"
-                    android:id="@+id/date6"
-                    android:focusable="true"
                     />
 
                 <Button
+                    android:id="@+id/date7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="JAN 21\nSUN"
-                    android:textColor="#fff"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/button_transparent"
-                    android:id="@+id/date7"
                     android:focusable="true"
+                    android:text="JAN 21\nSUN"
+                    android:textColor="#fff"
+                    />
+
+                <Button
+                    android:id="@+id/date8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
+                    android:text="JAN 21\nSUN"
+                    android:textColor="#fff"
+                    />
+                <Button
+                    android:id="@+id/date9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
+                    android:text="JAN 21\nSUN"
+                    android:textColor="#fff"
+                    />
+                <Button
+                    android:id="@+id/date10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
+                    android:text="JAN 21\nSUN"
+                    android:textColor="#fff"
+                    />
+                <Button
+                    android:id="@+id/date11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
+                    android:text="JAN 21\nSUN"
+                    android:textColor="#fff"
+                    />
+                <Button
+                    android:id="@+id/date12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
+                    android:text="JAN 21\nSUN"
+                    android:textColor="#fff"
+                    />
+                <Button
+                    android:id="@+id/date13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
+                    android:text="JAN 21\nSUN"
+                    android:textColor="#fff"
+                    />
+                <Button
+                    android:id="@+id/date14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/button_transparent"
+                    android:focusable="true"
+                    android:text="JAN 21\nSUN"
+                    android:textColor="#fff"
                     />
 
             </LinearLayout>
@@ -129,174 +200,174 @@
 
 
         <TextView
+            android:id="@+id/textaddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
-            android:textStyle="bold"
             android:layout_below="@id/horiview"
-            android:gravity="left"
-            android:textColor="#000"
-            android:textSize="20dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:id="@+id/textaddress"
+            android:gravity="left"
+            android:text="Address"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold"
             />
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:id="@+id/mainhouse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/mainhouse"
             android:layout_below="@id/textaddress"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             float:fletPadding="5dp">
 
             <EditText
+                android:id="@+id/house"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="House"
-                android:id="@+id/house"
                 android:paddingLeft="10dp"/>
 
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:id="@+id/mainlocality"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/mainhouse"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:id="@+id/mainlocality"
             float:fletPaddingBottom="5dp">
 
             <EditText
+                android:id="@+id/locality"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Locality"
-                android:id="@+id/locality"
                 android:paddingLeft="10dp"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
 
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:id="@+id/mainpin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/mainlocality"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:id="@+id/mainpin"
             float:fletPaddingBottom="5dp">
 
             <EditText
+                android:id="@+id/pin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Pin"
-                android:id="@+id/pin"
                 android:paddingLeft="10dp"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
         <Button
+            android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/horiview"
-
             android:layout_alignParentRight="true"
+
+            android:layout_below="@id/horiview"
             android:layout_marginLeft="160dp"
             android:layout_marginRight="20dp"
-            android:text=" get my Location "
-            android:onClick="locat"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/buttonstyle"
             android:focusable="true"
             android:foreground="@drawable/ripple_custom"
-            android:background="@drawable/buttonstyle"
-            android:id="@+id/button"
-            android:textSize="10dp"
+            android:onClick="locat"
+            android:text=" get my Location "
             android:textColor="#fff"
+            android:textSize="10dp"
             />
 
 
 
         <fragment
             android:id="@+id/place_autocomplete_fragment"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/mainpin"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
-            tools:layout_editor_absoluteY="0dp"
-            android:layout_below="@id/mainpin"
             tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp"
             />
 
         <View
+            android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_below="@id/place_autocomplete_fragment"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:layout_below="@id/place_autocomplete_fragment"
-            android:id="@+id/view"
             android:background="#808080"/>
 
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:id="@+id/mainmobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/view"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_below="@id/view"
-            android:id="@+id/mainmobile"
             float:fletPaddingBottom="5dp">
 
 
             <EditText
+                android:id="@+id/mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Mobile No"
-                android:id="@+id/mobile"
-                android:paddingLeft="10dp"
-                android:inputType="phone"/>
+                android:inputType="phone"
+                android:paddingLeft="10dp"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:id="@+id/mainremarks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/mainmobile"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:id="@+id/mainremarks"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_transparent"
-            android:layout_marginBottom="10dp"
             float:fletPaddingBottom="5dp">
 
             <EditText
+                android:id="@+id/remarks"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:gravity="bottom"
                 android:layout_gravity="left"
                 android:layout_marginBottom="10dp"
+                android:gravity="bottom"
                 android:hint="Other info"
-                android:id="@+id/remarks"
                 android:paddingLeft="10dp"/>
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Place order"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/mainremarks"
             android:layout_marginBottom="10dp"
-            android:background="#141414"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:textColor="#fff"
-            android:layout_below="@id/mainremarks"
+            android:layout_marginTop="10dp"
+            android:background="#141414"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="confirm"
             android:foreground="@drawable/ripple_custom"
+            android:onClick="confirm"
+            android:text="Place order"
+            android:textColor="#fff"
             />
 
     </RelativeLayout>

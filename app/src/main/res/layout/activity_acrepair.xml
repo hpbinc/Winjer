@@ -17,17 +17,22 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/background"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/acrepairback"/>
-
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:elevation="20dp"
                 android:paddingBottom="5dp"
                 android:paddingLeft="10dp"
+                android:shadowColor="#e85c5b5b"
+                android:shadowDx="-4"
+                android:shadowDy="-4"
+                android:shadowRadius="10"
                 android:text="AC SERVICE"
                 android:textColor="#fff"
                 android:textSize="25sp"
@@ -123,7 +128,7 @@
             android:lineSpacingExtra="7dp"
             android:paddingBottom="16dp"
             android:paddingLeft="40dp"
-            android:text="\u25ba Inspection charge: ₹150\n\u25ba Final amount based on work "
+            android:text=" "
             android:textSize="13sp"/>
 
 

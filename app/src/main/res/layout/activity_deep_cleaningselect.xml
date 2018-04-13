@@ -27,7 +27,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/buttonstyle2"
-                android:text="HOUSE"/>
+                android:text="APARTMENT"/>
 
 
             <Button
@@ -37,7 +37,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/buttonstyle2"
-                android:text="APARTMENT"/>
+                android:text="HOUSE"/>
 
 
         </LinearLayout>
@@ -89,7 +89,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/iv_mocha"
                     android:paddingLeft="20dp"
-                    android:text="1 BHK House  - ₹3000"
+                    android:text="1 BHK House"
                     android:textSize="20sp" />
 
                 <RadioButton
@@ -124,7 +124,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/iv_americano"
                     android:paddingLeft="20dp"
-                    android:text="2 BHK House  - ₹3500"
+                    android:text="2 BHK House"
                     android:textSize="20sp" />
 
                 <RadioButton
@@ -159,7 +159,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/iv_espresso"
                     android:paddingLeft="20dp"
-                    android:text="3 BHK House  - ₹4500"
+                    android:text="3 BHK House"
                     android:textSize="20sp" />
 
                 <RadioButton
@@ -195,7 +195,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/iv_orange"
                     android:paddingLeft="20dp"
-                    android:text="4 BHK House  - ₹6000"
+                    android:text="4 BHK House"
                     android:textSize="20sp" />
 
                 <RadioButton
